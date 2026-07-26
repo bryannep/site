@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- wire handles -->
+  <path d="M22 28c0-8 3-15 10-15s10 7 10 15" stroke="#1a1a1a" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M25 28c0-5.8 2.2-10.5 7-10.5S39 22.2 39 28" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- short binder body -->
+  <path d="M17 29h30l-3.2 17.5H20.2L17 29Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2.4" stroke-linejoin="round"/>
+  <!-- paper-fold facets -->
+  <path d="M19.5 31.5 30.5 44M44.5 31.5 33.5 44M23 31h18" stroke="#fbfaf8" stroke-width="1.7" stroke-linecap="round" opacity=".95"/>
+  <!-- side arms -->
+  <path d="M18 29 10 38M46 29l8 9" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+</svg>
