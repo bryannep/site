@@ -88,34 +88,36 @@
 
     .video-field-note .field-note-label {
       display: inline-block;
-      margin: 0 0 8px;
-      color: #1f1d1b;
-      font-family: "Caveat", "Bradley Hand", cursive;
-      font-size: 1.08rem;
+      margin: 0 0 12px;
+      font-family: "Patrick Hand", "Bradley Hand", "Segoe Print", cursive;
+      font-size: 17px;
       font-weight: 700;
-      letter-spacing: .045em;
+      color: #1f1d1b;
       text-transform: uppercase;
-      border-bottom: 2px solid currentColor;
+      letter-spacing: .06em;
+      border-bottom: 2px solid #1f1d1b;
+      line-height: 1.05;
     }
 
-    .video-field-note h3 {
-      max-width: 19ch;
-      margin: 0 0 10px;
+    .video-field-note .video-note-title,
+    .video-field-note .video-note-description {
+      margin: 0;
       color: #1f1d1b;
-      font-family: "Patrick Hand", "Bradley Hand", cursive;
-      font-size: clamp(1.85rem, 3.5vw, 2.8rem);
+      font-family: "Shadows Into Light", "Caveat", "Bradley Hand", cursive;
+      font-size: 23px;
+      line-height: 1.42;
       font-weight: 400;
-      line-height: 1.02;
-      letter-spacing: -.01em;
+      letter-spacing: 0;
+    }
+
+    .video-field-note .video-note-title {
+      margin-bottom: 8px;
+      font-size: 29px;
+      line-height: 1.18;
     }
 
     .video-field-note .video-note-description {
       max-width: 58ch;
-      margin: 0;
-      color: #2a2826;
-      font-family: "Shadows Into Light", "Caveat", cursive;
-      font-size: clamp(1.25rem, 2vw, 1.55rem);
-      line-height: 1.38;
     }
 
     .video-field-note-action {
@@ -324,7 +326,7 @@
     <section id="philosophy" class="section soft with-field-note">
       <aside class="field-note" aria-label="Field note">
         <span class="field-note-clip" aria-hidden="true"></span>
-        <span class="field-note-label">Field note 01</span>
+        <span class="field-note-label">FIELD NOTE 01</span>
         <p>Research creates value only when organizations know how to act on it.</p>
       </aside>
       <div class="shell narrow">
@@ -353,8 +355,8 @@
             <summary>
               <span class="field-note-clip" aria-hidden="true"></span>
               <span class="video-field-note-copy">
-                <span class="field-note-label">Field note 02</span>
-                <h3>Trustworthy Evidence Creates Better Decisions</h3>
+                <span class="field-note-label">FIELD NOTE 02</span>
+                <p class="video-note-title">Trustworthy Evidence Creates Better Decisions</p>
                 <p class="video-note-description">Understanding how evidence is produced builds confidence in the decisions that follow.</p>
               </span>
               <span class="video-field-note-action" aria-hidden="true">
@@ -376,7 +378,7 @@
     <section id="methods" class="section with-field-note">
       <aside class="field-note" aria-label="Field note">
         <span class="field-note-clip" aria-hidden="true"></span>
-        <span class="field-note-label">Field note 03</span>
+        <span class="field-note-label">FIELD NOTE 03</span>
         <p>Sometimes the method becomes more important than the finding.</p>
       </aside>
       <div class="shell">
@@ -445,8 +447,8 @@
               <summary>
                 <span class="field-note-clip" aria-hidden="true"></span>
                 <span class="video-field-note-copy">
-                  <span class="field-note-label">Field note 04</span>
-                  <h3>Innovation Comes From Borrowing Better Ideas</h3>
+                  <span class="field-note-label">FIELD NOTE 04</span>
+                  <p class="video-note-title">Innovation Comes From Borrowing Better Ideas</p>
                   <p class="video-note-description">Some of the strongest innovations come from adapting proven ideas across disciplines rather than inventing entirely new ones.</p>
                 </span>
                 <span class="video-field-note-action" aria-hidden="true">
@@ -468,8 +470,8 @@
               <summary>
                 <span class="field-note-clip" aria-hidden="true"></span>
                 <span class="video-field-note-copy">
-                  <span class="field-note-label">Field note 05</span>
-                  <h3>Better Decisions Require Better Evidence</h3>
+                  <span class="field-note-label">FIELD NOTE 05</span>
+                  <p class="video-note-title">Better Decisions Require Better Evidence</p>
                   <p class="video-note-description">Every evaluation method has strengths and limitations. Confidence comes from integrating multiple forms of evidence rather than relying on any single source.</p>
                 </span>
                 <span class="video-field-note-action" aria-hidden="true">
@@ -492,7 +494,7 @@
     <section id="work" class="section dark with-field-note">
       <aside class="field-note field-note-dark" aria-label="Field note">
         <span class="field-note-clip" aria-hidden="true"></span>
-        <span class="field-note-label">Field note 06</span>
+        <span class="field-note-label">FIELD NOTE 06</span>
         <p>The domains changed. The underlying challenge did not.</p>
       </aside>
       <div class="shell">
@@ -554,7 +556,7 @@
     <section id="research" class="section soft with-field-note">
       <aside class="field-note" aria-label="Field note">
         <span class="field-note-clip" aria-hidden="true"></span>
-        <span class="field-note-label">Field note 07</span>
+        <span class="field-note-label">FIELD NOTE 07</span>
         <p>Trustworthy evidence matters more than more data.</p>
       </aside>
       <div class="shell">
