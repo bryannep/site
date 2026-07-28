@@ -1072,100 +1072,301 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
   }
 }
 
-/* v0.56 VERIFIED VISUAL RESTORATION — DO NOT REMOVE */
+/* v0.57 — restore approved component system from pre-consolidation baseline */
 
-#home .eyebrow {
-  color: #287493 !important;
+/* Career highlights / by-the-numbers band */
+#home .stats {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  width: min(calc(100% - 40px), var(--max));
+  margin: 72px auto 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-#home .hero-panel {
-  padding: 34px 36px 32px !important;
-  color: #ffffff !important;
-  background: #1f1d20 !important;
-  border-radius: 24px !important;
+#home .stats article {
+  min-width: 0;
+  padding: 24px 18px;
+  border-right: 1px solid var(--line);
 }
 
-#home .panel-label {
-  display: block !important;
-  margin: 0 0 28px !important;
-  color: rgba(255,255,255,.72) !important;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: .75rem !important;
-  font-weight: 700 !important;
-  line-height: 1.2 !important;
-  letter-spacing: .12em !important;
-  text-transform: uppercase !important;
+#home .stats article:last-child {
+  border-right: 0;
 }
 
-#home .flow {
-  position: relative !important;
-  display: grid !important;
-  gap: 24px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
+#home .stats strong {
+  display: block;
+  margin: 0 0 5px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 650;
+  line-height: 1;
+  color: var(--ink);
 }
 
-#home .flow::before {
-  content: "" !important;
-  position: absolute !important;
-  left: 20px !important;
-  top: 20px !important;
-  bottom: 20px !important;
-  width: 2px !important;
-  background: #287493 !important;
-  opacity: .9 !important;
+#home .stats span {
+  display: block;
+  color: var(--muted);
+  font-family: var(--font-interface);
+  font-size: .75rem;
+  line-height: 1.35;
 }
 
-#home .flow li {
-  position: relative !important;
-  z-index: 1 !important;
-  display: grid !important;
-  grid-template-columns: 42px minmax(0, 1fr) !important;
-  gap: 18px !important;
-  align-items: center !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-#home .flow li::marker {
-  content: "" !important;
-}
-
-#home .flow li > span {
-  position: relative !important;
-  z-index: 2 !important;
-  display: grid !important;
-  place-items: center !important;
-  width: 42px !important;
-  height: 42px !important;
-  padding: 0 !important;
-  color: #287493 !important;
-  background: #1f1d20 !important;
-  border: 1.5px solid #287493 !important;
-  border-radius: 50% !important;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: .75rem !important;
-  font-weight: 500 !important;
-  line-height: 1 !important;
-}
-
-#home .flow li > strong {
-  color: #ffffff !important;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
-  font-size: clamp(1.08rem, 1.45vw, 1.34rem) !important;
-  font-weight: 700 !important;
-  line-height: 1.18 !important;
-  letter-spacing: -.025em !important;
-}
-
+/* Blue editorial labels */
+#home .eyebrow,
 #philosophy .eyebrow,
 #systems .eyebrow,
 #ideas .eyebrow,
 #research .eyebrow {
   color: #287493 !important;
 }
-</style><meta content="v0.56" name="portfolio-build"/></head>
+
+/* Approved operating-model diagram */
+#home .hero-panel {
+  padding: 34px 36px 32px !important;
+  color: #fff !important;
+  background: #1f1d20 !important;
+  border-radius: 24px !important;
+}
+
+#home .panel-label {
+  display: block;
+  margin: 0 0 28px;
+  color: rgba(255,255,255,.72);
+  font-family: var(--font-interface);
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#home .flow {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#home .flow::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  background: #287493;
+  opacity: .9;
+}
+
+#home .flow li {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#home .flow li::marker {
+  content: "";
+}
+
+#home .flow li > span {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: #287493;
+  background: #1f1d20;
+  border: 1.5px solid #287493;
+  border-radius: 50%;
+  font-family: var(--font-interface);
+  font-size: .75rem;
+  line-height: 1;
+}
+
+#home .flow li > strong {
+  color: #fff;
+  font-family: var(--font-interface);
+  font-size: clamp(1.08rem, 1.45vw, 1.34rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+
+/* Notebook Field Notes */
+.field-note {
+  position: absolute;
+  z-index: 4;
+  width: 190px;
+  min-height: 190px;
+  padding: 38px 24px 30px 34px;
+  color: #1f1d1b;
+  background:
+    linear-gradient(90deg, transparent 0 24px, rgba(194,72,72,.28) 24px 25px, transparent 25px),
+    radial-gradient(circle at 1px 1px, rgba(26,66,138,.14) 1px, transparent 1.2px),
+    #fffdf7;
+  background-size: auto, 14px 14px, auto;
+  border: 1px solid rgba(23,23,23,.12);
+  border-radius: 8px 12px 10px 7px;
+  box-shadow: 0 12px 26px rgba(28,25,22,.10);
+  transform: rotate(-1deg);
+}
+
+.field-note::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  right: 26px;
+  bottom: 15px;
+  height: 10px;
+  background:
+    linear-gradient(176deg, transparent 46%, #1f1d1b 47% 51%, transparent 52%) 0 0 / 100% 5px no-repeat,
+    linear-gradient(179deg, transparent 47%, #1f1d1b 48% 51%, transparent 52%) 10px 5px / 82% 4px no-repeat;
+  opacity: .92;
+}
+
+.field-note-clip {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  top: -22px;
+  left: 12px;
+  background: url("assets/icons/binder-clip.png") center / contain no-repeat;
+  transform: rotate(-6deg);
+}
+
+.field-note-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #1f1d1b !important;
+  border-bottom: 2px solid #1f1d1b;
+  font-family: var(--font-note-label);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.field-note p {
+  margin: 0;
+  color: #1f1d1b !important;
+  font-family: var(--font-note-body);
+  font-size: 23px;
+  line-height: 1.42;
+}
+
+/* Preserve the latest approved Field Note placements */
+#philosophy .philosophy-layout {
+  position: relative;
+}
+
+#philosophy .philosophy-copy {
+  padding-right: 276px;
+}
+
+#philosophy .philosophy-field-note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  max-width: 220px;
+  min-height: 190px;
+  margin: 0;
+}
+
+#systems .systems-field-note,
+#systems .learn-field-note,
+#systems .inline-field-note,
+#research .inline-field-note {
+  position: relative;
+  inset: auto;
+  width: min(220px, 100%);
+  margin: 32px 0 0 auto;
+  opacity: 1;
+  animation: none;
+}
+
+#systems .learn-heading-row .learn-field-note {
+  margin-top: 0;
+}
+
+/* Align the blue labels on all three flagship cards */
+#systems .flip-card-face.flip-card-front {
+  justify-content: flex-start;
+  padding-top: 46px;
+}
+
+#systems .flip-card-type {
+  display: block;
+  min-height: 1.25em;
+  margin: 0 0 26px;
+  color: #287493;
+  font-family: var(--font-interface);
+  font-size: .95rem;
+  line-height: 1.25;
+}
+
+#systems .flip-card-front h5 {
+  margin: 0;
+}
+
+/* Responsive restoration */
+@media (max-width: 980px) {
+  #home .stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #home .stats article:nth-child(3n) {
+    border-right: 0;
+  }
+
+  #philosophy .philosophy-copy {
+    padding-right: 0;
+  }
+
+  #philosophy .philosophy-field-note {
+    position: relative;
+    inset: auto;
+    width: min(240px, 100%);
+    max-width: none;
+    margin: 32px 0 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  #home .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #home .stats article:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+
+  #home .stats article:nth-child(2n) {
+    border-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field-note,
+  #home .flow::before,
+  #home .flow li {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+</style><meta content="v0.57" name="portfolio-build"/></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
