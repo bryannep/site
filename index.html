@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Patrick+Hand&amp;family=Shadows+Into+Light&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,650;1,8..60,400;1,8..60,500;1,8..60,650&amp;display=swap" rel="stylesheet"/>
-
 <style id="site-styles">
 /* Portfolio baseline and layout primitives */
 
@@ -1074,6 +1073,109 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 }
 
 
+
+
+/* v0.55 — restore approved visual language omitted during consolidation */
+
+/* Blue editorial labels on light backgrounds */
+#home .eyebrow,
+#philosophy .eyebrow,
+#systems .eyebrow,
+#ideas .eyebrow,
+#research .eyebrow {
+  color: #287493 !important;
+}
+
+/* Approved operating-model panel */
+#home .hero-panel {
+  padding: 34px 36px 32px;
+  color: #ffffff;
+  background: #1f1d20;
+  border-radius: 24px;
+}
+
+#home .panel-label {
+  display: block;
+  margin: 0 0 28px;
+  color: rgba(255,255,255,.72);
+  font-family: var(--font-interface);
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#home .flow {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+#home .flow::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: #287493;
+  opacity: .9;
+}
+
+#home .flow li {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+#home .flow li::marker {
+  content: "";
+}
+
+#home .flow li > span {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: #287493;
+  background: #1f1d20;
+  border: 1.5px solid #287493;
+  border-radius: 50%;
+  font-family: var(--font-interface);
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+#home .flow li > strong {
+  color: #ffffff;
+  font-family: var(--font-interface);
+  font-size: clamp(1.08rem, 1.45vw, 1.34rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -.025em;
+}
+
+/* Keep the restored panel readable on smaller screens */
+@media (max-width: 980px) {
+  #home .hero-panel {
+    max-width: 620px;
+  }
+}
 </style></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
