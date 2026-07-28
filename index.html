@@ -1366,7 +1366,272 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
     transform: none !important;
   }
 }
-</style><meta content="v0.57" name="portfolio-build"/></head>
+
+
+/* v0.58 — targeted layout and component restorations */
+
+/* By-the-numbers band: vertical dividers only */
+#home .stats {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+/* Philosophy narrative spans the complete shell width */
+#philosophy .philosophy-intro {
+  width: calc(100% + 276px);
+  max-width: none;
+}
+
+#philosophy .philosophy-intro > p {
+  width: 100%;
+  max-width: none;
+}
+
+#philosophy .philosophy-question.centered-question {
+  width: 100%;
+  max-width: none;
+  margin: 28px 0 !important;
+  text-align: center !important;
+}
+
+#philosophy .philosophy-question.centered-question strong {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Systems introduction spans full width; Field Note 02 sits below on the left */
+#systems > .shell > .section-heading {
+  display: block;
+}
+
+#systems > .shell > .section-heading > div:first-child,
+#systems > .shell > .section-heading h2,
+#systems > .shell > .section-heading .systems-purpose {
+  width: 100%;
+  max-width: none;
+}
+
+#systems .systems-note-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  margin: 0 0 64px;
+}
+
+#systems .systems-note-row .systems-field-note {
+  position: relative;
+  inset: auto;
+  width: 220px;
+  max-width: 220px;
+  margin: 0;
+  justify-self: start;
+}
+
+/* Exhibit 02 copy uses the full interior width of its box */
+#systems .learn-flagship-copy {
+  width: 100%;
+  max-width: none;
+}
+
+#systems .learn-flagship-copy > p:not(.project-citation) {
+  width: 100%;
+  max-width: none;
+}
+
+/* Restore Watch Exhibit typography and interaction hierarchy */
+#systems .video-field-note {
+  margin: 0 0 var(--space-5);
+  padding: 0;
+  overflow: hidden;
+  background: #fffdf7;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+#systems .video-field-note details {
+  margin: 0;
+}
+
+#systems .video-field-note summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  min-height: 190px;
+  padding: 38px 38px 34px 56px;
+  cursor: pointer;
+  list-style: none;
+  background:
+    linear-gradient(90deg, transparent 0 30px, rgba(194,72,72,.18) 30px 31px, transparent 31px),
+    radial-gradient(circle at 1px 1px, rgba(40,116,147,.13) 1px, transparent 1.2px),
+    #fffdf7;
+  background-size: auto, 15px 15px, auto;
+}
+
+#systems .video-field-note summary::-webkit-details-marker {
+  display: none;
+}
+
+#systems .video-field-note-copy {
+  display: block;
+  min-width: 0;
+}
+
+#systems .video-note-title {
+  margin: 14px 0 10px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.03;
+  letter-spacing: -.03em;
+  color: var(--ink);
+}
+
+#systems .video-note-description {
+  max-width: 64ch;
+  margin: 0;
+  font-family: var(--font-interface);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+#systems .video-field-note-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 148px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  background: transparent;
+}
+
+#systems .video-field-note-action-text {
+  font-family: var(--font-interface);
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+#systems .video-field-note-media {
+  padding: 0 16px 16px;
+}
+
+#systems .video-field-note-media video {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#systems .video-field-note-media figcaption {
+  padding: 10px 2px 2px;
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+/* Restore Align capability card system */
+#systems .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#systems .card-grid .card {
+  min-width: 0;
+  padding: 28px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(23,23,23,.05);
+}
+
+#systems .card-grid .card-tag {
+  margin: 0 0 18px;
+  color: #287493;
+  font-family: var(--font-interface);
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#systems .card-grid .card h3 {
+  margin: 0 0 14px;
+  font-family: var(--font-interface);
+  font-size: 1.28rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+#systems .card-grid .card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+#systems .card-grid .card img {
+  width: 100%;
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+/* Field Note 04 belongs at the top of Align */
+#systems .align-heading-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+#systems .align-heading-row .pillar-heading {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+#systems .align-heading-row .inline-field-note {
+  position: relative;
+  inset: auto;
+  width: 220px;
+  max-width: 220px;
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  #philosophy .philosophy-intro {
+    width: 100%;
+  }
+
+  #systems .systems-note-row,
+  #systems .align-heading-row {
+    grid-template-columns: 1fr;
+  }
+
+  #systems .align-heading-row .inline-field-note,
+  #systems .systems-note-row .systems-field-note {
+    width: min(240px, 100%);
+    max-width: none;
+  }
+
+  #systems .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style><meta content="v0.58" name="portfolio-build"/></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
@@ -1461,11 +1726,11 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 <p class="section-framing systems-purpose">Different artifacts. One purpose: strengthening how organizations learn, align, and decide.</p>
 </div>
 </div>
-<aside aria-label="Field note" class="field-note systems-field-note">
+<div class="systems-note-row"><aside aria-label="Field note" class="field-note systems-field-note">
 <span aria-hidden="true" class="field-note-clip"></span>
 <span class="field-note-label">FIELD NOTE 02</span>
 <p>Trustworthy evidence isn’t collected.<br/>It’s established.</p>
-</aside>
+</aside></div>
 <section class="system-pillar learn-section">
 <div class="learn-heading-row">
 <div class="pillar-heading">
@@ -1615,13 +1880,17 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 </section>
 </section>
 <section class="system-pillar">
-<div class="pillar-heading">
+<div class="align-heading-row"><div class="pillar-heading">
 <p class="eyebrow">Align</p>
 <h3 class="editorial-thesis">Create confidence across people, priorities, and products.</h3>
 <p>Alignment isn’t agreement.</p>
 <p>It’s creating enough confidence in the evidence, reasoning, and tradeoffs for organizations to move forward together.</p>
 <p>The work is making assumptions visible, interpretations explicit, and decision criteria understandable across disciplines.</p>
-</div>
+</div><aside aria-label="Field note" class="field-note inline-field-note">
+<span aria-hidden="true" class="field-note-clip"></span>
+<span class="field-note-label">FIELD NOTE 04</span>
+<p>Alignment is a verb.<br/>Not a destination.</p>
+</aside></div>
 <figure class="video-field-note align-exhibit">
 <details>
 <summary>
@@ -1662,11 +1931,7 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .
 <p>A model for increasing research impact through engagement, agility, methodological innovation, and enterprise relevance.</p>
 </article>
 </div>
-<aside aria-label="Field note" class="field-note inline-field-note">
-<span aria-hidden="true" class="field-note-clip"></span>
-<span class="field-note-label">FIELD NOTE 04</span>
-<p>Alignment is a verb.<br/>Not a destination.</p>
-</aside>
+
 </section>
 <section class="system-pillar">
 <div class="pillar-heading">
