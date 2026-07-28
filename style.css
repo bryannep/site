@@ -1,0 +1,1062 @@
+/* Portfolio baseline and layout primitives */
+
+:root {
+  --ink: #171717;
+  --muted: #66625f;
+  --paper: #fbfaf8;
+  --soft: #f1eee9;
+  --line: #d9d4cd;
+  --accent: #7dbcdc;
+  --accent-2: #287493;
+  --white: #ffffff;
+  --dark: #1d1b1f;
+  --success: #69a63b;
+  --max: 1180px;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; }
+
+.shell {
+  width: min(calc(100% - 40px), var(--max));
+  margin-inline: auto;
+}
+
+.narrow {
+  width: min(calc(100% - 40px), 860px);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 96px 0;
+  scroll-margin-top: 80px;
+}
+
+.soft { background: var(--soft); }
+.dark { background: var(--dark); color: var(--white); }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  z-index: 1000;
+  padding: 10px 14px;
+  color: white;
+  background: var(--ink);
+}
+
+.skip-link:focus { left: 8px; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251,250,248,.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(23,23,23,.08);
+}
+
+.nav-wrap {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: white;
+  background: var(--ink);
+  font-size: 13px;
+}
+
+.site-nav { display: flex; gap: 22px; }
+.site-nav a { text-decoration: none; font-size: 14px; font-weight: 600; color: #403d3b; }
+.site-nav a:hover,
+.site-nav a:focus { color: var(--accent-2); }
+
+.nav-toggle { display: none; }
+
+.hero { padding-top: 110px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button.primary { color: white; background: var(--ink); }
+.button.secondary { background: transparent; }
+.button.light { color: var(--ink); background: white; border-color: white; }
+.button.ghost { color: white; border-color: rgba(255,255,255,.45); }
+
+.hero-panel {
+  position: sticky;
+  top: 110px;
+  padding: 28px;
+  color: white;
+  background: var(--dark);
+  border-radius: 24px;
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 980px) {
+  .site-nav {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 62px;
+    width: 220px;
+    padding: 16px;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  }
+
+  .site-nav.open { display: flex; }
+
+  .nav-toggle {
+    display: inline-flex;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: transparent;
+    font-weight: 700;
+  }
+
+  .hero-grid,
+  .research-layout,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-panel { position: static; }
+}
+
+@media (max-width: 700px) {
+  .section { padding: 72px 0; }
+  .hero { padding-top: 82px; }
+  .brand-name { display: none; }
+}
+
+/* Portfolio design system — v0.25 */
+
+    :root {
+      --ink: #171717;
+      --muted: #696562;
+      --paper: #f6f3ef;
+      --surface: #ffffff;
+      --soft: #efebe6;
+      --line: #d9d2ca;
+      --dark: #1f1d20;
+      --accent: #287493;
+      --accent-dark: #7dbcdc;
+
+      --font-display: "Source Serif 4", Georgia, serif;
+      --font-interface: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-note-label: "Patrick Hand", "Bradley Hand", cursive;
+      --font-note-body: "Shadows Into Light", "Segoe Print", cursive;
+
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+      --space-7: 88px;
+      --space-8: 112px;
+
+      --measure-body: 64ch;
+      --measure-deck: 50ch;
+      --measure-display: 14ch;
+    }
+
+    /* Five recurring text roles */
+    .eyebrow,
+    .card-tag,
+    .project-citation,
+    .exhibit-kicker,
+    .field-note-label,
+    .media-card > span,
+    .article-card > span,
+    .research-list article > span {
+      font-family: var(--font-interface);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    .section-heading h2,
+    .pillar-heading h3,
+    .philosophy-question,
+    .capability-title,
+    .learn-flagship h4 {
+      font-family: var(--font-display);
+      color: var(--ink);
+      letter-spacing: -.045em;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin: 0 0 var(--space-4);
+      font-size: clamp(4.5rem, 8vw, 8rem);
+      line-height: .94;
+    }
+
+    .section-heading h2 {
+      max-width: var(--measure-display);
+      margin: 0 0 var(--space-4);
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      line-height: .98;
+    }
+
+    .pillar-heading h3,
+    .pillar-heading .pillar-title {
+      max-width: 17ch;
+      margin: 0 0 var(--space-4);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+    }
+
+    .capability-title,
+    .learn-flagship h4 {
+      max-width: 18ch;
+      margin: 0 0 var(--space-2);
+      font-size: clamp(2.6rem, 4.3vw, 4.2rem);
+      line-height: 1.02;
+    }
+
+    .section-framing,
+    .hero-sub,
+    .philosophy-question {
+      font-family: var(--font-display);
+    }
+
+    .hero-sub {
+      max-width: 24ch;
+      margin: 0 0 var(--space-3);
+      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      line-height: 1.15;
+      color: #373330;
+    }
+
+    .section-framing {
+      max-width: var(--measure-deck);
+      margin: 0;
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      line-height: 1.45;
+      color: #4b4744;
+    }
+
+    .section-framing + .section-framing {
+      margin-top: var(--space-2);
+    }
+
+    body,
+    p,
+    li,
+    a,
+    button {
+      font-family: var(--font-interface);
+    }
+
+    p {
+      line-height: 1.58;
+    }
+
+    /* Reusable vertical sequence */
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-5);
+      align-items: start;
+      margin-bottom: var(--space-6);
+    }
+
+    .section-heading .eyebrow,
+    .pillar-heading .eyebrow {
+      display: block;
+      margin-bottom: var(--space-3);
+      color: var(--accent);
+    }
+
+    .system-pillar {
+      margin-top: var(--space-7);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--line);
+    }
+
+    .system-pillar:first-of-type {
+      margin-top: var(--space-6);
+    }
+
+    .pillar-heading {
+      max-width: 900px;
+      margin-bottom: var(--space-6);
+    }
+
+    .pillar-heading > p:not(.eyebrow) {
+      max-width: var(--measure-body);
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .pillar-heading > p:not(.eyebrow) + p {
+      margin-top: var(--space-2);
+    }
+
+    /* Philosophy */
+    #philosophy .section-heading {
+      max-width: 1120px;
+      margin-bottom: var(--space-6);
+    }
+
+    #philosophy .section-heading h2 {
+      max-width: 13ch;
+      font-size: clamp(3.7rem, 5.6vw, 5.8rem);
+    }
+
+    #philosophy .section-framing {
+      max-width: 46ch;
+    }
+
+    .philosophy-intro {
+      max-width: 760px;
+      margin: 0 0 var(--space-6);
+    }
+
+    .philosophy-intro > p {
+      max-width: 62ch;
+      margin: 0;
+    }
+
+    .philosophy-intro > p + * {
+      margin-top: var(--space-3);
+    }
+
+    .philosophy-question {
+      max-width: 18ch;
+      margin: var(--space-4) 0;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      line-height: 1.08;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+
+    .principles article {
+      padding-top: var(--space-4);
+      border-top: 2px solid var(--ink);
+    }
+
+    .principles h4 {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-interface);
+      font-size: 1.35rem;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    .principles p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* Learn heading row */
+    .learn-heading-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 340px);
+      gap: var(--space-6);
+      align-items: start;
+      margin-bottom: var(--space-6);
+    }
+
+    .learn-heading-row .pillar-heading {
+      margin-bottom: 0;
+    }
+
+    .learn-field-note,
+    .systems-field-note,
+    .inline-field-note {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 0;
+      opacity: 1;
+      animation: none;
+    }
+
+    /* Flagship */
+    .learn-flagship {
+      padding: var(--space-5);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: 0 18px 44px rgba(23,23,23,.08);
+    }
+
+    .learn-flagship-copy {
+      max-width: 840px;
+    }
+
+    .learn-flagship-copy .exhibit-kicker {
+      display: block;
+      margin-bottom: var(--space-3);
+    }
+
+    .project-citation {
+      margin: 0 0 var(--space-4);
+      color: var(--muted);
+    }
+
+    .learn-flagship-copy > p:not(.project-citation) {
+      max-width: 70ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .learn-flagship-copy > p:not(.project-citation) + p {
+      margin-top: var(--space-2);
+    }
+
+    .learn-flagship-video {
+      margin: var(--space-5) 0;
+    }
+
+    /* Principle cards */
+    .flip-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+
+    .flip-card,
+    .flip-card-button,
+    .flip-card-inner {
+      min-height: 290px;
+    }
+
+    .flip-card {
+      perspective: 1200px;
+    }
+
+    .flip-card-button {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      display: block;
+      width: 100%;
+      transition: transform .5s cubic-bezier(.2,.75,.25,1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner,
+    .flip-card.is-flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-4);
+      border: 1px solid rgba(23,23,23,.13);
+      border-radius: 16px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      box-shadow: 0 12px 26px rgba(23,23,23,.08);
+    }
+
+    .flip-card-front {
+      background:
+        linear-gradient(90deg, transparent 0 30px, rgba(194,72,72,.18) 30px 31px, transparent 31px),
+        radial-gradient(circle at 1px 1px, rgba(40,116,147,.13) 1px, transparent 1.2px),
+        #fffdf7;
+      background-size: auto, 15px 15px, auto;
+    }
+
+    .flip-card-back {
+      color: #fff;
+      background: var(--dark);
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-type {
+      margin-bottom: var(--space-3);
+      color: var(--accent);
+    }
+
+    .flip-card-front h5 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+
+    .flip-card-back p {
+      margin: 0;
+      color: rgba(255,255,255,.82);
+      font-size: 1rem;
+    }
+
+    /* Supporting Learn exhibits */
+    .learn-support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .learn-support-card {
+      display: grid;
+      gap: var(--space-4);
+      padding: var(--space-4);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(23,23,23,.05);
+    }
+
+    .learn-support-card h4 {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.06;
+      letter-spacing: -.03em;
+    }
+
+    .learn-support-copy > p:not(.project-citation):not(.supporting-metrics) {
+      margin: 0;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .learn-support-copy > p:not(.project-citation):not(.supporting-metrics) + p {
+      margin-top: var(--space-2);
+    }
+
+    .supporting-metrics {
+      margin-top: var(--space-3);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .learn-mini-exhibit,
+    .align-exhibit,
+    .video-field-note {
+      position: relative;
+      margin: 0;
+      padding: var(--space-2);
+      background: #fffdf7;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .learn-mini-media {
+      overflow: hidden;
+      min-height: 220px;
+      margin-bottom: var(--space-2);
+      border-radius: 9px;
+      background: var(--soft);
+    }
+
+    .learn-mini-media img,
+    .learn-mini-media video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+    }
+
+    .learn-mini-media.placeholder {
+      display: grid;
+      place-items: center;
+      padding: var(--space-4);
+      text-align: center;
+      background: linear-gradient(135deg, rgba(40,116,147,.11), rgba(125,188,220,.04)), var(--soft);
+    }
+
+    .learn-mini-exhibit h5 {
+      margin: 0 0 var(--space-1);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+    }
+
+    .learn-mini-exhibit figcaption p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .align-exhibit {
+      margin-bottom: var(--space-5);
+    }
+
+    /* Research */
+    #research .section-heading {
+      align-items: start;
+    }
+
+    #research .research-question {
+      display: block;
+      max-width: 22ch;
+      margin-top: var(--space-3);
+      font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+      line-height: 1.1;
+    }
+
+    /* Footer */
+    .footer-grid.footer-statement {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) auto;
+      gap: var(--space-7);
+      align-items: start;
+    }
+
+    .footer-statement > div:first-child {
+      max-width: 820px;
+    }
+
+    .footer-statement .footer-question {
+      max-width: 16ch;
+      margin-top: var(--space-3);
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.2vw, 4rem);
+      line-height: 1.05;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: flex-end;
+    }
+
+    /* Active navigation clip */
+    .site-nav {
+      position: relative;
+    }
+
+    .nav-clip {
+      display: block;
+      position: absolute;
+      top: -33px;
+      left: 0;
+      width: 38px;
+      height: 38px;
+      background: url("assets/icons/binder-clip.png") center / contain no-repeat;
+      transform: translateX(-50%) rotate(-5deg);
+      transition: left .32s cubic-bezier(.2,.75,.25,1), transform .2s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .site-nav.is-moving .nav-clip {
+      transform: translateX(-50%) rotate(3deg) translateY(-2px);
+    }
+
+    @media (hover: none) {
+      .flip-card:hover .flip-card-inner {
+        transform: none;
+      }
+
+      .flip-card.is-flipped .flip-card-inner,
+      .flip-card:focus-within .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .section-heading,
+      .learn-heading-row,
+      .footer-grid.footer-statement {
+        grid-template-columns: 1fr;
+      }
+
+      .principles,
+      .flip-card-grid,
+      .learn-support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2,
+      .pillar-heading h3,
+      .capability-title,
+      .learn-flagship h4 {
+        max-width: none;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-clip {
+        display: none;
+      }
+
+      .learn-flagship {
+        padding: var(--space-3);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flip-card-inner,
+      .nav-clip {
+        transition: none;
+      }
+    }
+
+/* v0.38 — stable responsive Philosophy layout */
+#philosophy .philosophy-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(190px, 13vw, 220px);
+  gap: clamp(32px, 3.5vw, 56px);
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+#philosophy .philosophy-copy {
+  min-width: 0;
+}
+
+#philosophy .philosophy-copy .eyebrow {
+  margin-bottom: 22px;
+  color: var(--accent);
+}
+
+#philosophy .philosophy-copy h2 {
+  width: auto;
+  max-width: none;
+  margin: 0 0 28px;
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 4.15vw, 4.55rem);
+  line-height: 1.03;
+  letter-spacing: -.035em;
+  font-style: italic;
+  font-weight: 400;
+  color: #373330;
+  text-wrap: balance;
+}
+
+#philosophy .philosophy-deck,
+#philosophy .philosophy-intro,
+#philosophy .philosophy-intro > p,
+#philosophy .philosophy-question {
+  width: auto;
+  max-width: none;
+  padding: 0;
+}
+
+#philosophy .philosophy-deck,
+#philosophy .philosophy-intro > p,
+#philosophy .principles p {
+  margin: 0;
+  font-family: var(--font-interface);
+  font-size: 1.18rem;
+  line-height: 1.62;
+  color: #4f4b48;
+}
+
+#philosophy .philosophy-intro {
+  margin-top: 44px;
+}
+
+#philosophy .philosophy-intro > p + p {
+  margin-top: 20px;
+}
+
+#philosophy .philosophy-question {
+  margin: 24px 0 20px clamp(24px, 4vw, 56px) !important;
+  font-family: var(--font-interface);
+  font-size: 1.28rem;
+  line-height: 1.5;
+  color: #373330;
+}
+
+#philosophy .philosophy-field-note {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  max-width: 220px;
+  margin: 0;
+  justify-self: end;
+  opacity: 1;
+  animation: none;
+}
+
+#philosophy .principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  max-width: none;
+  gap: clamp(32px, 3vw, 48px);
+  margin-top: 0;
+}
+
+#philosophy .principles article {
+  min-width: 0;
+  padding-top: 24px;
+}
+
+#philosophy .principles h4 {
+  margin: 0 0 12px;
+  font-family: var(--font-interface);
+  font-size: 1.22rem;
+  line-height: 1.18;
+  letter-spacing: -.02em;
+}
+
+#philosophy .principles p {
+  width: auto;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  #philosophy .philosophy-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  #philosophy .philosophy-field-note {
+    width: min(240px, 100%);
+    max-width: none;
+    justify-self: end;
+  }
+
+  #philosophy .principles {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* v0.39 — Philosophy note no longer controls row height */
+
+#philosophy .philosophy-layout {
+  position: relative;
+  display: block;
+  margin-bottom: 28px;
+}
+
+#philosophy .philosophy-copy {
+  min-width: 0;
+  padding-right: 276px;
+}
+
+#philosophy .philosophy-field-note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  max-width: 220px;
+  margin: 0;
+  opacity: 1;
+  animation: none;
+  z-index: 2;
+}
+
+#philosophy .philosophy-question {
+  margin: 24px 0 20px clamp(24px, 4vw, 56px) !important;
+  font-family: var(--font-interface);
+  font-size: 1.22rem;
+  line-height: 1.18;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+#philosophy .philosophy-question strong {
+  font-weight: 700;
+}
+
+#philosophy .principles {
+  margin-top: 0;
+}
+
+@media (max-width: 1000px) {
+  #philosophy .philosophy-copy {
+    padding-right: 0;
+  }
+
+  #philosophy .philosophy-field-note {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(240px, 100%);
+    max-width: none;
+    margin: 32px 0 0 auto;
+  }
+
+  #philosophy .philosophy-layout {
+    margin-bottom: 32px;
+  }
+}
+
+/* Approved typography system refinements */
+
+/*
+  Philosophy and the Learn / Align / Decide leadership statements share
+  one editorial thesis style. Change this token once to update all four.
+*/
+.editorial-thesis,
+#philosophy .philosophy-copy h2,
+#systems .pillar-heading h3,
+#systems .pillar-heading .pillar-title {
+  width: auto;
+  max-width: none;
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 4.15vw, 4.55rem);
+  line-height: 1.03;
+  letter-spacing: -.035em;
+  font-style: italic;
+  font-weight: 400;
+  color: #373330;
+  text-wrap: balance;
+}
+
+/* Preserve each section's existing spacing rather than redesigning layout. */
+#philosophy .editorial-thesis {
+  margin: 0 0 28px;
+}
+
+#systems .editorial-thesis {
+  margin: 0 0 var(--space-4);
+}
+
+/* Center only the Philosophy question across its content column. */
+#philosophy .philosophy-question.centered-question {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 32px auto !important;
+  padding: 0;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* Keep the approved hero composition intact. */
+#home h1 {
+  line-height: .97;
+}
+
+/* Live-site refinements */
+
+/* Reduce excess headspace without changing the hero composition. */
+#home.hero {
+  padding-top: 76px;
+}
+
+/* Center the Philosophy question across the full page content area. */
+#philosophy .philosophy-intro {
+  width: 100%;
+  max-width: none;
+}
+
+#philosophy .philosophy-question.centered-question {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 34px 0 !important;
+  padding: 0;
+  text-align: center !important;
+  text-wrap: balance;
+}
+
+#philosophy .philosophy-question.centered-question strong {
+  display: block;
+  width: 100%;
+  max-width: none;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  #home.hero {
+    padding-top: 64px;
+  }
+}
+

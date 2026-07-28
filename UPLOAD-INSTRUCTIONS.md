@@ -1,20 +1,18 @@
-# Upload these files to the repository root
+# Replace these two files in the repository root
 
-Replace the live files with:
+Upload both files directly into the root of `bryannep/site`:
 
 - `index.html`
-- `assets/style.css`
+- `style.css`
 
-This package intentionally uses `index.html`, which is the file GitHub Pages serves at:
+Do not place `style.css` inside `assets`, and do not replace the `assets` folder.
 
-`https://bryannep.github.io/site/`
+What was fixed:
 
-Included changes:
+- `index.html` now loads `style.css` from the repository root
+- removed the broken `assets/script.js` reference; the required JavaScript is already embedded in `index.html`
+- retained the centered Philosophy question rule
+- retained “three ideas:” with the colon
+- preserved all existing references to videos, images, PDFs, and icons inside `assets`
 
-- renamed the current approved page from `index 5.html` to `index.html`
-- reduced hero top padding slightly so more of the headline appears above the fold
-- centered “How do organizations make better decisions under uncertainty?” across the full Philosophy content area
-- retained the approved colon in “three ideas:”
-- preserved the consolidated typography system and existing page design
-
-After uploading, GitHub Pages may take a minute or two to rebuild.
+After GitHub finishes publishing, refresh the live page with Command + Shift + R.
