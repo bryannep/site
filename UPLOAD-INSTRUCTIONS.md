@@ -1,17 +1,13 @@
-# Typography consolidation update
+# Upload these files to GitHub
 
-Replace these two repository files:
+Replace:
 
 - `index 5.html`
 - `assets/style.css`
 
-Changes included:
+Corrections in this version:
 
-- moved all former inline `<style>` blocks from `index 5.html` into `assets/style.css`
-- centered “How do organizations make better decisions under uncertainty?”
-- retained the colon in “three ideas:”
-- created one shared `.editorial-thesis` style for Philosophy, Learn, Align, and Decide
-- loaded the true italic Source Serif 4 font face
-- preserved the existing hero composition and added only a slight line-height increase
-
-No content wording was changed beyond the approved punctuation.
+- centers “How do organizations make better decisions under uncertainty?” across the full Philosophy content area
+- keeps `ihope.mp4` in Exhibit 01
+- removes `ihope.mp4` from Exhibit 05 and replaces it with a neutral artifact placeholder
+- preserves the typography consolidation and all other approved content
