@@ -51,4 +51,41 @@ Every exhibit provides supporting evidence.
 
 ## Current Version
 
-v0.18 — Work in progress
+v0.47 — Work in progress
+
+## Typography System
+
+The interface uses five recurring text roles:
+
+1. Label
+2. Display
+3. Deck
+4. Body
+5. Caption
+
+Hierarchy should be communicated primarily through order, spacing, and scale—not by inventing a new style for each component.
+
+
+## Current Approved Baseline
+
+The current production baseline is `index.html` v0.47.
+
+The hero and Philosophy are considered locked unless a future change is explicitly requested for those sections.
+
+Current information architecture:
+
+- Philosophy
+- Systems
+  - Learn
+  - Align
+  - Decide
+- Ideas
+- Research
+- About
+
+Current interaction language:
+
+- one moving binder clip in the navigation
+- Field Notes as annotations without external labels or leader lines
+- flip cards for reusable Design With Us principles
+- exhibits as supporting evidence

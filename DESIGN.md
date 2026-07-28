@@ -177,3 +177,207 @@ Field Note body copy uses a softer handwritten font.
 - Startup gradients
 - Cute elements that reduce credibility
 - Treating every contribution as a method
+
+## Five-Role Typography System
+
+The site uses five recurring typographic roles.
+
+### Label
+
+Small uppercase sans-serif text for section labels, content types, dates, and metadata.
+
+Examples:
+
+- PHILOSOPHY
+- LEARN
+- EXHIBIT 02
+- DESIGN WITH US
+
+### Display
+
+Large serif text for the primary thesis of a page, section, or capability.
+
+Examples:
+
+- Organizations don’t struggle because they lack data.
+- Better products are a natural outcome of better decisions.
+- Strengthening organizational learning.
+
+### Deck
+
+Medium serif text that explains or reframes the display statement.
+
+Deck copy should remain between roughly 40 and 52 characters per line.
+
+### Body
+
+Sans-serif text for narrative explanation, evidence, and supporting detail.
+
+Body copy should remain between roughly 55 and 68 characters per line.
+
+### Caption
+
+Small text for exhibit descriptions, article categories, citations, and secondary context.
+
+## Semantic Heading Rules
+
+- `h1` — the homepage thesis; one per page
+- `h2` — major site sections
+- `h3` — major questions or pillars within a section
+- `h4` — capability statements and principle titles
+- `h5` — exhibit and card titles
+
+Visual treatment must follow semantic hierarchy rather than wrapper-specific exceptions.
+
+## Vertical Rhythm
+
+Every major section follows a repeated sequence:
+
+1. Label
+2. Display
+3. Deck
+4. Body, when needed
+5. Content
+
+Spacing is controlled by a small shared scale. New components should not introduce unique margin systems unless the content model genuinely requires one.
+
+
+## Layout Owns Width
+
+Component layout determines available width.
+
+Typography rules define appearance, not column geometry.
+
+Do not use character-based `max-width`, fixed text widths, or wrapper-specific width overrides to force line breaks when an adjacent artifact determines the available space.
+
+For sections pairing narrative content with a Field Note or Exhibit:
+
+1. Define an explicit grid
+2. Give the narrative column `minmax(0, 1fr)`
+3. Give the artifact a deliberate fixed or bounded width
+4. Let headings and paragraphs use the full narrative column
+5. Move full-width evidence below the introductory grid
+
+
+## Decorative Artifacts Must Not Dictate Narrative Measure
+
+A Field Note may accompany a section without becoming a structural column.
+
+When an artifact occupies unused visual space rather than participating in the reading flow, position it independently and let the narrative use the full available measure.
+
+Reserve a grid column only when both columns are genuinely part of the same reading structure.
+
+
+## Shared Editorial Hierarchy
+
+All major sections use the same visual order:
+
+1. Label
+2. Major section thesis
+3. Explanatory copy
+4. Major subsection thesis, when needed
+5. Shared bold title
+6. Supporting evidence or body copy
+
+### Shared bold title
+
+Questions, principles, capability names, card titles, publication titles, and timeline titles use one shared token.
+
+They must share:
+
+- font family
+- size
+- weight
+- line height
+- letter spacing
+- color
+
+Component-specific selectors may control spacing, but must not redefine the typography.
+
+
+## Current Typography Hierarchy
+
+### Hero
+
+The hero is locked to the approved index 5 composition.
+
+Do not alter its width, scale, wrapping, grid proportions, or operating-model placement unless the change is explicitly requested.
+
+### Philosophy
+
+Philosophy is also treated as an approved baseline.
+
+Its thesis, narrative, Field Note, and three principles should not inherit later section-level overrides.
+
+### Systems
+
+Systems is the hero-level section for the Learn → Align → Decide structure.
+
+Each subsection begins with:
+
+1. blue uppercase label
+2. italic serif leadership statement
+3. sans-serif explanatory copy
+4. supporting capabilities and exhibits
+
+Approved leadership statements:
+
+- *Strengthening organizational learning.*
+- *Create confidence across people, priorities, and products.*
+- *Improve decision quality under uncertainty.*
+
+The wording is intentional. Each statement describes something Bryanne does as a leader and should not be rewritten merely to create grammatical parallelism.
+
+## Field Note Rules
+
+Field Notes function as annotations.
+
+They should not include:
+
+- external “Annotation” labels
+- blue leader lines
+- decorative callout text outside the note
+
+Placement rules:
+
+- Field Note 01 accompanies Philosophy
+- Field Note 02 remains within the Systems introduction and may later be replaced by an image
+- Field Note 03 accompanies Learn
+- Field Note 04 belongs beside the Align heading
+- later Field Notes should remain close to the section idea they interpret
+
+A Field Note should never reserve unnecessary width for unrelated copy or overlap readable content.
+
+## Navigation Binder Clip
+
+Only one moving binder clip may appear in the navigation.
+
+The clip is represented by the `.nav-clip` element.
+
+Navigation-link pseudo-elements must not render additional binder images.
+
+## Flagship Principle Cards
+
+The three Design With Us cards are the strongest card treatment on the site:
+
+- Memory
+- Infrastructure
+- Strategy
+
+Their blue labels align at the same vertical position.
+
+Their serif titles should remain prominent but fully contained within the card at supported desktop widths.
+
+Supporting cards should remain visually quieter.
+
+## Spacing Tokens
+
+Use shared spacing tokens for rhythm:
+
+- section
+- chapter
+- block
+- paragraph
+- tight
+
+Spacing should support reading order and hierarchy rather than create decorative emptiness.

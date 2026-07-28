@@ -19,8 +19,12 @@ Create the definitive executive portfolio demonstrating how organizations learn,
 - [ ] Motion language
 - [ ] Illustration language
 - [ ] Diagram standards
+- [x] Consolidated typography and spacing rules
 - [ ] Final responsive rules
+- [x] Lock approved hero and Philosophy baseline
+- [x] Normalize Learn, Align, and Decide subsection thesis treatment
 - [ ] Accessibility review
+- [ ] Full semantic heading audit
 
 # Milestone 2
 
@@ -104,11 +108,14 @@ Create the definitive executive portfolio demonstrating how organizations learn,
 
 ## Technical Foundation
 
-- [ ] Refactor inline styles
+- [x] Consolidate accumulated inline style overrides
+- [ ] Move final design system into reusable CSS modules
+- [x] Refactor Philosophy width into an explicit layout grid
 - [ ] Organize reusable CSS components
 - [ ] Organize shared JavaScript
 - [ ] Standardize exhibit components
-- [ ] Standardize flip-card components
+- [x] Standardize flagship Design With Us flip-card fronts
+- [ ] Standardize remaining flip-card components
 - [ ] Organize media assets
 - [ ] Add metadata and social previews
 - [ ] Test performance and responsive behavior
@@ -120,7 +127,31 @@ Create the definitive executive portfolio demonstrating how organizations learn,
 - [ ] Executive usability review
 - [ ] Practitioner usability review
 - [ ] Accessibility review
+- [ ] Full semantic heading audit
 - [ ] Mobile review
 - [ ] Link and media audit
 - [ ] Publish final GitHub Pages site
 - [ ] Connect custom domain
+
+
+## Hierarchy normalization
+
+- [x] Standardize hero and Philosophy hierarchy
+- [x] Standardize Systems, Ideas, Research, and About hierarchy
+- [x] Create one shared bold title token
+- [ ] Remove superseded historical CSS blocks from the final production stylesheet
+
+
+# Milestone 9
+
+## Production Cleanup
+
+**Status: 🟡 Active**
+
+- [x] Establish v0.47 as the current baseline
+- [x] Document protected hero and Philosophy sections
+- [x] Confirm a single navigation binder clip
+- [x] Record current Field Note placement rules
+- [ ] Remove superseded historical inline CSS in a dedicated refactor
+- [ ] Move approved CSS into reusable files only after visual regression testing
+- [ ] Test desktop, tablet, and mobile layouts against saved screenshots

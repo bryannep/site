@@ -1,0 +1,2134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Bryanne Peterson — evaluation scientist, research executive, and experience strategist." />
+  <title>Bryanne Peterson | Evaluation, Strategy, and Decision Quality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Patrick+Hand&family=Shadows+Into+Light&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+
+
+
+
+
+
+
+
+
+  <style>
+    /* Portfolio design system — v0.25 */
+
+    :root {
+      --ink: #171717;
+      --muted: #696562;
+      --paper: #f6f3ef;
+      --surface: #ffffff;
+      --soft: #efebe6;
+      --line: #d9d2ca;
+      --dark: #1f1d20;
+      --accent: #287493;
+      --accent-dark: #7dbcdc;
+
+      --font-display: "Source Serif 4", Georgia, serif;
+      --font-interface: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-note-label: "Patrick Hand", "Bradley Hand", cursive;
+      --font-note-body: "Shadows Into Light", "Segoe Print", cursive;
+
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+      --space-7: 88px;
+      --space-8: 112px;
+
+      --measure-body: 64ch;
+      --measure-deck: 50ch;
+      --measure-display: 14ch;
+    }
+
+    /* Five recurring text roles */
+    .eyebrow,
+    .card-tag,
+    .project-citation,
+    .exhibit-kicker,
+    .field-note-label,
+    .media-card > span,
+    .article-card > span,
+    .research-list article > span {
+      font-family: var(--font-interface);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    .section-heading h2,
+    .pillar-heading h3,
+    .philosophy-question,
+    .capability-title,
+    .learn-flagship h4 {
+      font-family: var(--font-display);
+      color: var(--ink);
+      letter-spacing: -.045em;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin: 0 0 var(--space-4);
+      font-size: clamp(4.5rem, 8vw, 8rem);
+      line-height: .94;
+    }
+
+    .section-heading h2 {
+      max-width: var(--measure-display);
+      margin: 0 0 var(--space-4);
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      line-height: .98;
+    }
+
+    .pillar-heading h3,
+    .pillar-heading .pillar-title {
+      max-width: 17ch;
+      margin: 0 0 var(--space-4);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1;
+    }
+
+    .capability-title,
+    .learn-flagship h4 {
+      max-width: 18ch;
+      margin: 0 0 var(--space-2);
+      font-size: clamp(2.6rem, 4.3vw, 4.2rem);
+      line-height: 1.02;
+    }
+
+    .section-framing,
+    .hero-sub,
+    .philosophy-question {
+      font-family: var(--font-display);
+    }
+
+    .hero-sub {
+      max-width: 24ch;
+      margin: 0 0 var(--space-3);
+      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      line-height: 1.15;
+      color: #373330;
+    }
+
+    .section-framing {
+      max-width: var(--measure-deck);
+      margin: 0;
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      line-height: 1.45;
+      color: #4b4744;
+    }
+
+    .section-framing + .section-framing {
+      margin-top: var(--space-2);
+    }
+
+    body,
+    p,
+    li,
+    a,
+    button {
+      font-family: var(--font-interface);
+    }
+
+    p {
+      line-height: 1.58;
+    }
+
+    /* Reusable vertical sequence */
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-5);
+      align-items: start;
+      margin-bottom: var(--space-6);
+    }
+
+    .section-heading .eyebrow,
+    .pillar-heading .eyebrow {
+      display: block;
+      margin-bottom: var(--space-3);
+      color: var(--accent);
+    }
+
+    .system-pillar {
+      margin-top: var(--space-7);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--line);
+    }
+
+    .system-pillar:first-of-type {
+      margin-top: var(--space-6);
+    }
+
+    .pillar-heading {
+      max-width: 900px;
+      margin-bottom: var(--space-6);
+    }
+
+    .pillar-heading > p:not(.eyebrow) {
+      max-width: var(--measure-body);
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .pillar-heading > p:not(.eyebrow) + p {
+      margin-top: var(--space-2);
+    }
+
+    /* Philosophy */
+    #philosophy .section-heading {
+      max-width: 1120px;
+      margin-bottom: var(--space-6);
+    }
+
+    #philosophy .section-heading h2 {
+      max-width: 13ch;
+      font-size: clamp(3.7rem, 5.6vw, 5.8rem);
+    }
+
+    #philosophy .section-framing {
+      max-width: 46ch;
+    }
+
+    .philosophy-intro {
+      max-width: 760px;
+      margin: 0 0 var(--space-6);
+    }
+
+    .philosophy-intro > p {
+      max-width: 62ch;
+      margin: 0;
+    }
+
+    .philosophy-intro > p + * {
+      margin-top: var(--space-3);
+    }
+
+    .philosophy-question {
+      max-width: 18ch;
+      margin: var(--space-4) 0;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      line-height: 1.08;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+
+    .principles article {
+      padding-top: var(--space-4);
+      border-top: 2px solid var(--ink);
+    }
+
+    .principles h4 {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-interface);
+      font-size: 1.35rem;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    .principles p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* Learn heading row */
+    .learn-heading-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 340px);
+      gap: var(--space-6);
+      align-items: start;
+      margin-bottom: var(--space-6);
+    }
+
+    .learn-heading-row .pillar-heading {
+      margin-bottom: 0;
+    }
+
+    .learn-field-note,
+    .systems-field-note,
+    .inline-field-note {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 0;
+      opacity: 1;
+      animation: none;
+    }
+
+    /* Flagship */
+    .learn-flagship {
+      padding: var(--space-5);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: 0 18px 44px rgba(23,23,23,.08);
+    }
+
+    .learn-flagship-copy {
+      max-width: 840px;
+    }
+
+    .learn-flagship-copy .exhibit-kicker {
+      display: block;
+      margin-bottom: var(--space-3);
+    }
+
+    .project-citation {
+      margin: 0 0 var(--space-4);
+      color: var(--muted);
+    }
+
+    .learn-flagship-copy > p:not(.project-citation) {
+      max-width: 70ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .learn-flagship-copy > p:not(.project-citation) + p {
+      margin-top: var(--space-2);
+    }
+
+    .learn-flagship-video {
+      margin: var(--space-5) 0;
+    }
+
+    /* Principle cards */
+    .flip-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+
+    .flip-card,
+    .flip-card-button,
+    .flip-card-inner {
+      min-height: 290px;
+    }
+
+    .flip-card {
+      perspective: 1200px;
+    }
+
+    .flip-card-button {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      display: block;
+      width: 100%;
+      transition: transform .5s cubic-bezier(.2,.75,.25,1);
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner,
+    .flip-card.is-flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-4);
+      border: 1px solid rgba(23,23,23,.13);
+      border-radius: 16px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      box-shadow: 0 12px 26px rgba(23,23,23,.08);
+    }
+
+    .flip-card-front {
+      background:
+        linear-gradient(90deg, transparent 0 30px, rgba(194,72,72,.18) 30px 31px, transparent 31px),
+        radial-gradient(circle at 1px 1px, rgba(40,116,147,.13) 1px, transparent 1.2px),
+        #fffdf7;
+      background-size: auto, 15px 15px, auto;
+    }
+
+    .flip-card-back {
+      color: #fff;
+      background: var(--dark);
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-type {
+      margin-bottom: var(--space-3);
+      color: var(--accent);
+    }
+
+    .flip-card-front h5 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+
+    .flip-card-back p {
+      margin: 0;
+      color: rgba(255,255,255,.82);
+      font-size: 1rem;
+    }
+
+    /* Supporting Learn exhibits */
+    .learn-support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .learn-support-card {
+      display: grid;
+      gap: var(--space-4);
+      padding: var(--space-4);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(23,23,23,.05);
+    }
+
+    .learn-support-card h4 {
+      margin: 0 0 var(--space-2);
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.06;
+      letter-spacing: -.03em;
+    }
+
+    .learn-support-copy > p:not(.project-citation):not(.supporting-metrics) {
+      margin: 0;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .learn-support-copy > p:not(.project-citation):not(.supporting-metrics) + p {
+      margin-top: var(--space-2);
+    }
+
+    .supporting-metrics {
+      margin-top: var(--space-3);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .learn-mini-exhibit,
+    .align-exhibit,
+    .video-field-note {
+      position: relative;
+      margin: 0;
+      padding: var(--space-2);
+      background: #fffdf7;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .learn-mini-media {
+      overflow: hidden;
+      min-height: 220px;
+      margin-bottom: var(--space-2);
+      border-radius: 9px;
+      background: var(--soft);
+    }
+
+    .learn-mini-media img,
+    .learn-mini-media video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+    }
+
+    .learn-mini-media.placeholder {
+      display: grid;
+      place-items: center;
+      padding: var(--space-4);
+      text-align: center;
+      background: linear-gradient(135deg, rgba(40,116,147,.11), rgba(125,188,220,.04)), var(--soft);
+    }
+
+    .learn-mini-exhibit h5 {
+      margin: 0 0 var(--space-1);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+    }
+
+    .learn-mini-exhibit figcaption p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .align-exhibit {
+      margin-bottom: var(--space-5);
+    }
+
+    /* Research */
+    #research .section-heading {
+      align-items: start;
+    }
+
+    #research .research-question {
+      display: block;
+      max-width: 22ch;
+      margin-top: var(--space-3);
+      font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+      line-height: 1.1;
+    }
+
+    /* Footer */
+    .footer-grid.footer-statement {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) auto;
+      gap: var(--space-7);
+      align-items: start;
+    }
+
+    .footer-statement > div:first-child {
+      max-width: 820px;
+    }
+
+    .footer-statement .footer-question {
+      max-width: 16ch;
+      margin-top: var(--space-3);
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.2vw, 4rem);
+      line-height: 1.05;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      justify-content: flex-end;
+    }
+
+    /* Active navigation clip */
+    .site-nav {
+      position: relative;
+    }
+
+    .nav-clip {
+      display: block;
+      position: absolute;
+      top: -33px;
+      left: 0;
+      width: 38px;
+      height: 38px;
+      background: url("assets/icons/binder-clip.png") center / contain no-repeat;
+      transform: translateX(-50%) rotate(-5deg);
+      transition: left .32s cubic-bezier(.2,.75,.25,1), transform .2s ease;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .site-nav.is-moving .nav-clip {
+      transform: translateX(-50%) rotate(3deg) translateY(-2px);
+    }
+
+    @media (hover: none) {
+      .flip-card:hover .flip-card-inner {
+        transform: none;
+      }
+
+      .flip-card.is-flipped .flip-card-inner,
+      .flip-card:focus-within .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .section-heading,
+      .learn-heading-row,
+      .footer-grid.footer-statement {
+        grid-template-columns: 1fr;
+      }
+
+      .principles,
+      .flip-card-grid,
+      .learn-support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2,
+      .pillar-heading h3,
+      .capability-title,
+      .learn-flagship h4 {
+        max-width: none;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-clip {
+        display: none;
+      }
+
+      .learn-flagship {
+        padding: var(--space-3);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flip-card-inner,
+      .nav-clip {
+        transition: none;
+      }
+    }
+  </style>
+
+<style>
+/* v0.38 — stable responsive Philosophy layout */
+#philosophy .philosophy-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(190px, 13vw, 220px);
+  gap: clamp(32px, 3.5vw, 56px);
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+#philosophy .philosophy-copy {
+  min-width: 0;
+}
+
+#philosophy .philosophy-copy .eyebrow {
+  margin-bottom: 22px;
+  color: var(--accent);
+}
+
+#philosophy .philosophy-copy h2 {
+  width: auto;
+  max-width: none;
+  margin: 0 0 28px;
+  font-family: var(--font-display);
+  font-size: clamp(3.25rem, 4.15vw, 4.55rem);
+  line-height: 1.03;
+  letter-spacing: -.035em;
+  font-style: italic;
+  font-weight: 400;
+  color: #373330;
+  text-wrap: balance;
+}
+
+#philosophy .philosophy-deck,
+#philosophy .philosophy-intro,
+#philosophy .philosophy-intro > p,
+#philosophy .philosophy-question {
+  width: auto;
+  max-width: none;
+  padding: 0;
+}
+
+#philosophy .philosophy-deck,
+#philosophy .philosophy-intro > p,
+#philosophy .principles p {
+  margin: 0;
+  font-family: var(--font-interface);
+  font-size: 1.18rem;
+  line-height: 1.62;
+  color: #4f4b48;
+}
+
+#philosophy .philosophy-intro {
+  margin-top: 44px;
+}
+
+#philosophy .philosophy-intro > p + p {
+  margin-top: 20px;
+}
+
+#philosophy .philosophy-question {
+  margin: 24px 0 20px clamp(24px, 4vw, 56px) !important;
+  font-family: var(--font-interface);
+  font-size: 1.28rem;
+  line-height: 1.5;
+  color: #373330;
+}
+
+#philosophy .philosophy-field-note {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  max-width: 220px;
+  margin: 0;
+  justify-self: end;
+  opacity: 1;
+  animation: none;
+}
+
+#philosophy .principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  max-width: none;
+  gap: clamp(32px, 3vw, 48px);
+  margin-top: 0;
+}
+
+#philosophy .principles article {
+  min-width: 0;
+  padding-top: 24px;
+}
+
+#philosophy .principles h4 {
+  margin: 0 0 12px;
+  font-family: var(--font-interface);
+  font-size: 1.22rem;
+  line-height: 1.18;
+  letter-spacing: -.02em;
+}
+
+#philosophy .principles p {
+  width: auto;
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  #philosophy .philosophy-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  #philosophy .philosophy-field-note {
+    width: min(240px, 100%);
+    max-width: none;
+    justify-self: end;
+  }
+
+  #philosophy .principles {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+</style>
+
+
+<style>
+/* v0.39 — Philosophy note no longer controls row height */
+
+#philosophy .philosophy-layout {
+  position: relative;
+  display: block;
+  margin-bottom: 28px;
+}
+
+#philosophy .philosophy-copy {
+  min-width: 0;
+  padding-right: 276px;
+}
+
+#philosophy .philosophy-field-note {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 220px;
+  max-width: 220px;
+  margin: 0;
+  opacity: 1;
+  animation: none;
+  z-index: 2;
+}
+
+#philosophy .philosophy-question {
+  margin: 24px 0 20px clamp(24px, 4vw, 56px) !important;
+  font-family: var(--font-interface);
+  font-size: 1.22rem;
+  line-height: 1.18;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+#philosophy .philosophy-question strong {
+  font-weight: 700;
+}
+
+#philosophy .principles {
+  margin-top: 0;
+}
+
+@media (max-width: 1000px) {
+  #philosophy .philosophy-copy {
+    padding-right: 0;
+  }
+
+  #philosophy .philosophy-field-note {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(240px, 100%);
+    max-width: none;
+    margin: 32px 0 0 auto;
+  }
+
+  #philosophy .philosophy-layout {
+    margin-bottom: 32px;
+  }
+}
+</style>
+
+
+<style>
+/* v0.41 — post-Philosophy editorial refinements */
+
+:root {
+  --rhythm-section: clamp(96px, 9vw, 148px);
+  --rhythm-chapter: clamp(64px, 6vw, 96px);
+  --rhythm-block: clamp(40px, 4vw, 64px);
+  --rhythm-copy: 20px;
+  --rhythm-tight: 12px;
+}
+
+/* The approved hero and Philosophy are intentionally excluded. */
+#systems,
+#ideas,
+#research,
+#about {
+  scroll-margin-top: 88px;
+}
+
+#systems .system-pillar {
+  margin-top: var(--rhythm-chapter);
+  padding-top: var(--rhythm-block);
+}
+
+#systems .pillar-heading,
+#ideas .ideas-group > .section-heading,
+#ideas .pillar-heading {
+  margin-bottom: var(--rhythm-block);
+}
+
+#ideas .ideas-group + .ideas-group {
+  margin-top: var(--rhythm-chapter);
+}
+
+#research .research-layout,
+#about .timeline {
+  margin-top: var(--rhythm-block);
+}
+
+/* Recurring visual reminder of the central thesis */
+.decision-path {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, max-content));
+  gap: clamp(28px, 4vw, 64px);
+  width: fit-content;
+  margin-top: var(--rhythm-block);
+  padding-top: 20px;
+  font-family: var(--font-interface);
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.decision-path::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: var(--accent);
+  opacity: .65;
+}
+
+.decision-path span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.decision-path span::before {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: 12px;
+  width: 7px;
+  height: 7px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.decision-path b {
+  font-size: .68rem;
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+
+/* Field Notes read as annotations rather than floating decorative stickers */
+.field-note-annotation {
+  isolation: isolate;
+}
+
+.field-note-annotation::after {
+  content: "ANNOTATION";
+  position: absolute;
+  top: 18px;
+  right: calc(100% + 14px);
+  padding-right: 28px;
+  font-family: var(--font-interface);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.field-note-annotation::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: calc(100% + 6px);
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+  opacity: .65;
+}
+
+.field-note-dark.field-note-annotation::after {
+  color: var(--accent-dark);
+}
+
+.field-note-dark.field-note-annotation::before {
+  background: var(--accent-dark);
+}
+
+/* Flagship Design With Us principles carry the strongest card voice */
+.flip-card,
+.flip-card-button,
+.flip-card-inner {
+  min-height: 330px;
+}
+
+.flip-card-face {
+  padding: clamp(30px, 3vw, 46px);
+}
+
+.flip-card-front {
+  justify-content: flex-start;
+  padding-top: clamp(54px, 6vw, 82px);
+}
+
+.flip-card-type {
+  margin-bottom: 28px;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.flip-card-front .flagship-principle-title {
+  max-width: 13ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.25vw, 3.3rem);
+  line-height: 1.03;
+  letter-spacing: -.035em;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+/* Supporting capability cards remain deliberately quieter */
+.learn-support-card h4 {
+  font-size: clamp(1.75rem, 2.4vw, 2.35rem);
+}
+
+#research > .shell > .section-heading h2 {
+  max-width: 12ch;
+}
+
+/* Prevent annotation labels from crowding narrower layouts */
+@media (max-width: 1180px) {
+  .field-note-annotation::before,
+  .field-note-annotation::after {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .decision-path {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+    padding: 0 0 0 22px;
+  }
+
+  .decision-path::before {
+    top: 8px;
+    bottom: 8px;
+    left: 5px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  .decision-path span::before {
+    top: 6px;
+    left: -20px;
+  }
+
+  .flip-card,
+  .flip-card-button,
+  .flip-card-inner {
+    min-height: 290px;
+  }
+}
+</style>
+
+
+<style>
+/* v0.42 — targeted corrections */
+
+/* Exhibit 02 should not reserve an unused side column. */
+.learn-flagship-copy {
+  max-width: none;
+}
+
+.learn-flagship-copy > p:not(.project-citation) {
+  max-width: 88ch;
+}
+
+/* Remove the experimental timeline and annotation decorations completely. */
+.decision-path {
+  display: none !important;
+}
+
+.field-note::before,
+.field-note::after,
+.field-note-annotation::before,
+.field-note-annotation::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Restore a contained, readable flagship-card scale. */
+.flip-card,
+.flip-card-button,
+.flip-card-inner {
+  min-height: 290px;
+}
+
+.flip-card-face {
+  padding: var(--space-4);
+}
+
+.flip-card-front {
+  justify-content: center;
+  padding-top: var(--space-4);
+}
+
+.flip-card-type {
+  margin-bottom: var(--space-3);
+  font-size: .75rem;
+}
+
+.flip-card-front .flagship-principle-title {
+  max-width: 17ch;
+  font-size: clamp(1.65rem, 2.35vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+}
+
+/* Field Note 04 now belongs to the Align introduction. */
+.align-heading-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  gap: var(--space-6);
+  align-items: start;
+  margin-bottom: var(--space-6);
+}
+
+.align-heading-row .pillar-heading {
+  margin-bottom: 0;
+}
+
+.align-field-note {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  max-width: 260px;
+  margin: 0;
+  justify-self: end;
+  opacity: 1;
+  animation: none;
+}
+
+/* About: restore readable hierarchy and remove the artificial copy indent. */
+#about .section-heading h2 {
+  color: #f7f3ed !important;
+}
+
+#about .section-framing {
+  color: rgba(255,255,255,.78) !important;
+}
+
+#about .about-copy {
+  display: block;
+  max-width: 980px;
+  margin: var(--space-6) 0 0;
+}
+
+#about .about-copy > div {
+  max-width: 820px;
+  margin: 0;
+}
+
+#about .about-copy p {
+  max-width: 68ch;
+}
+
+/* Footer: one clear editorial close rather than competing columns. */
+.site-footer {
+  padding: clamp(72px, 8vw, 120px) 0;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.footer-editorial {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(48px, 8vw, 120px);
+  align-items: end;
+}
+
+.footer-copy {
+  max-width: 930px;
+}
+
+.footer-copy .eyebrow {
+  margin: 0 0 var(--space-3);
+  color: var(--accent);
+}
+
+.footer-question {
+  max-width: 15ch;
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.2vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: -.04em;
+  color: var(--ink);
+}
+
+.footer-context {
+  max-width: 66ch;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.footer-editorial .footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 140px;
+}
+
+.footer-editorial .footer-links a {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.footer-editorial .footer-links a:hover,
+.footer-editorial .footer-links a:focus-visible {
+  color: var(--accent);
+}
+
+/* Ensure the moving nav indicator is one image only. */
+.nav-clip::before,
+.nav-clip::after,
+.site-nav::before,
+.site-nav::after {
+  content: none !important;
+  display: none !important;
+}
+
+.site-nav > .nav-clip {
+  background-image: url("assets/icons/binder-clip.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+}
+
+@media (max-width: 980px) {
+  .align-heading-row,
+  .footer-editorial {
+    grid-template-columns: 1fr;
+  }
+
+  .align-field-note {
+    justify-self: start;
+  }
+
+  .footer-editorial .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 18px 28px;
+  }
+}
+</style>
+
+
+<style>
+/* v0.43 — width corrections and single nav clip */
+
+/* There is one real nav-clip span. Prevent external CSS from drawing another
+   binder clip through active-link pseudo-elements. */
+.site-nav a::before,
+.site-nav a::after,
+.site-nav a.active::before,
+.site-nav a.active::after,
+.site-nav [aria-current="page"]::before,
+.site-nav [aria-current="page"]::after {
+  content: none !important;
+  display: none !important;
+  background-image: none !important;
+}
+
+/* Keep the single moving indicator. */
+.site-nav > .nav-clip {
+  display: block !important;
+}
+
+/* Systems introduction uses the full content measure.
+   Field Note 02 remains where it currently sits below the introduction. */
+#systems > .shell > .section-heading {
+  display: block;
+}
+
+#systems > .shell > .section-heading > div {
+  width: 100%;
+  max-width: none;
+}
+
+#systems > .shell > .section-heading h2,
+#systems .systems-purpose {
+  width: 100%;
+  max-width: none;
+}
+
+/* Exhibit 02 copy should use the entire interior width of the framed exhibit. */
+.learn-flagship-copy,
+.learn-flagship-copy .capability-title,
+.learn-flagship-copy > p,
+.learn-flagship-copy > p:not(.project-citation) {
+  width: 100%;
+  max-width: none !important;
+}
+
+/* The title can remain editorially prominent without being held to a narrow column. */
+.learn-flagship-copy .capability-title {
+  text-wrap: balance;
+}
+
+/* Field Note 04 remains beside the Align title.
+   The actual Align explanation spans the full page below. */
+.align-heading-row {
+  margin-bottom: var(--space-4);
+}
+
+.align-heading-row .pillar-heading {
+  max-width: none;
+}
+
+.align-copy {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 var(--space-6);
+}
+
+.align-copy p {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  font-family: var(--font-interface);
+  font-size: 1.18rem;
+  line-height: 1.62;
+  color: #4f4b48;
+}
+
+.align-copy p + p {
+  margin-top: var(--space-2);
+}
+
+/* Footer question becomes the full-width closing statement.
+   Links follow beneath rather than competing for its horizontal measure. */
+.footer-editorial {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: var(--space-5);
+}
+
+.footer-copy {
+  width: 100%;
+  max-width: none;
+}
+
+.footer-question {
+  width: 100%;
+  max-width: none;
+  text-wrap: balance;
+}
+
+.footer-context {
+  max-width: 78ch;
+}
+
+.footer-editorial .footer-links {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  min-width: 0;
+}
+
+@media (max-width: 980px) {
+  #systems > .shell > .section-heading h2,
+  #systems .systems-purpose,
+  .learn-flagship-copy .capability-title {
+    max-width: none !important;
+  }
+}
+</style>
+
+
+<style>
+/* v0.44 — card-label alignment and full-width Philosophy narrative */
+
+/* Keep all blue card labels on one shared horizontal line. */
+.flip-card-front {
+  justify-content: flex-start;
+  padding-top: clamp(42px, 4vw, 58px);
+}
+
+.flip-card-type {
+  display: block;
+  flex: 0 0 auto;
+  min-height: 1.2em;
+  margin: 0 0 clamp(28px, 3vw, 38px);
+  line-height: 1.2;
+}
+
+.flip-card-front .flagship-principle-title {
+  margin: 0;
+}
+
+/* The Field Note only affects the Philosophy header.
+   The narrative beneath it spans the full shell width. */
+#philosophy .philosophy-layout {
+  margin-bottom: var(--space-5);
+}
+
+#philosophy .philosophy-intro-wide {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 var(--space-6);
+}
+
+#philosophy .philosophy-intro-wide > p {
+  width: 100%;
+  max-width: none;
+}
+
+#philosophy .philosophy-intro-wide .philosophy-question {
+  max-width: none;
+}
+</style>
+
+
+<style>
+/* v0.45 — Systems subsection theses */
+
+#systems .system-pillar > .pillar-heading h3,
+#systems .align-heading-row .pillar-heading h3 {
+  font-style: italic;
+}
+</style>
+<style>
+/* v0.47 — complete Systems subsection thesis treatment */
+
+#systems .learn-heading-row .pillar-title {
+  font-style: italic;
+}
+</style>
+
+
+<style>
+/* v0.50 — clean editorial footer */
+
+.site-footer {
+  padding: clamp(80px, 9vw, 132px) 0 clamp(48px, 6vw, 76px);
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.footer-clean {
+  display: block;
+}
+
+.footer-clean-copy {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+}
+
+.footer-clean-copy .eyebrow {
+  margin: 0 0 var(--space-4);
+  color: var(--accent);
+}
+
+.footer-clean-question {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto var(--space-4);
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 6vw, 6.6rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+  color: var(--ink);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.footer-clean-context {
+  max-width: 72ch;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--muted);
+  text-align: center;
+}
+
+.footer-clean-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 30px;
+  margin-top: clamp(42px, 5vw, 66px);
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-clean-links a {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.footer-clean-links a:hover,
+.footer-clean-links a:focus-visible {
+  color: var(--accent);
+}
+
+@media (max-width: 680px) {
+  .footer-clean-question {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .footer-clean-links {
+    gap: 14px 22px;
+  }
+}
+</style>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#home" aria-label="Bryanne Peterson home">
+        <span class="brand-mark">BP</span>
+        <span class="brand-name">Bryanne Peterson</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <span class="nav-clip" aria-hidden="true"></span>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#systems">Systems</a>
+        <a href="#ideas">Ideas</a>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero section">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Evaluation scientist · Research executive · Experience strategist</p>
+          <h1>Organizations don’t struggle because they lack data.</h1>
+          <p class="hero-sub">The real challenge is that data alone has never improved a decision.</p>
+          <p class="hero-copy">Better decisions emerge when organizations have strong systems to learn, align, and decide, drawing on human insight, business context, operational realities, and technical evidence throughout the decision-making process.</p>
+          <div class="button-row">
+            <a class="button primary" href="#systems">Explore Systems →</a>
+            <a class="button secondary" href="#research">View research</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel draw-diagram" aria-label="Core operating model">
+          <span class="panel-label">My operating model</span>
+          <ol class="flow">
+            <li><span>01</span><strong>Generate trustworthy evidence</strong></li>
+            <li><span>02</span><strong>Operationalize evidence</strong></li>
+            <li><span>03</span><strong>Enable better decisions</strong></li>
+          </ol>
+        </aside>
+      </div>
+
+      <div class="shell stats" aria-label="Career highlights">
+        <article><strong>20+</strong><span>years across research, education, technology, and leadership</span></article>
+        <article><strong>30+</strong><span>peer-reviewed, industry, and technical publications</span></article>
+        <article><strong>60+</strong><span>talks, panels, workshops, and invited presentations</span></article>
+        <article><strong>$30M+</strong><span>in sponsored research programs supported</span></article>
+        <article><strong>11K+</strong><span>registrants for a featured conference presentation</span></article>
+        <article><strong>98%</strong><span>participant engagement for Design With Us</span></article>
+      </div>
+    </section>
+
+
+    <section id="philosophy" class="section soft">
+      <div class="shell">
+        <div class="philosophy-layout">
+          <div class="philosophy-copy">
+            <p class="eyebrow">Philosophy</p>
+            <h2>Better products are a natural outcome of better decisions.</h2>
+            <p class="philosophy-deck">The hardest problems are rarely about finding more information. They’re about determining what deserves to influence action.</p>
+          </div>
+
+          <aside class="field-note philosophy-field-note" aria-label="Field note">
+            <span class="field-note-clip" aria-hidden="true"></span>
+            <span class="field-note-label">FIELD NOTE 01</span>
+            <p>Research creates potential.<br>Decisions create impact.</p>
+          </aside>
+        </div>
+
+        <div class="philosophy-intro philosophy-intro-wide">
+          <p>Across military leadership, academia, consulting, startups, and enterprise technology, I’ve kept returning to the same question:</p>
+          <p class="philosophy-question"><strong style="text-align:center; width:100%;">How do organizations make better decisions under uncertainty?</strong></p>
+          <p>The answers have taken different forms, but they consistently point toward three ideas:</p>
+        </div>
+
+        <div class="principles">
+          <article>
+            <h4>The decision is the product.</h4>
+            <p>Research creates value only when organizations know how to interpret it, challenge it, and act on it.</p>
+          </article>
+          <article>
+            <h4>Evidence should become organizational infrastructure.</h4>
+            <p>Not a report owned by one function, but a shared capability that supports planning, strategy, and execution.</p>
+          </article>
+          <article>
+            <h4>Rigor and engagement are not opposites.</h4>
+            <p>The strongest evidence often emerges when people participate meaningfully in making sense of complex problems together.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="systems" class="section">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Systems</p>
+            <h2>Designing how organizations learn, align, and decide.</h2>
+            <p class="section-framing systems-purpose">Different artifacts. One purpose: strengthening how organizations learn, align, and decide.</p>
+          </div>
+        </div>
+
+        <aside class="field-note systems-field-note" aria-label="Field note">
+          <span class="field-note-clip" aria-hidden="true"></span>
+          <span class="field-note-label">FIELD NOTE 02</span>
+          <p>Trustworthy evidence isn’t collected.<br>It’s established.</p>
+        </aside>
+
+        <section class="system-pillar learn-section">
+          <div class="learn-heading-row">
+            <div class="pillar-heading">
+              <p class="eyebrow">Learn</p>
+              <h3 class="pillar-title">Strengthening organizational learning.</h3>
+              <p>Organizations reduce uncertainty by improving how they learn.</p>
+              <p>The strongest learning systems help organizations ask better questions, recognize meaningful signals, evaluate evidence, discover patterns, and continuously learn from the outcomes of their decisions.</p>
+            </div>
+
+            <aside class="field-note learn-field-note" aria-label="Field note">
+              <span class="field-note-clip" aria-hidden="true"></span>
+              <span class="field-note-label">FIELD NOTE 03</span>
+              <p>Organizations routinely conflate<br>data,<br>evidence,<br>insight,<br>and decisions.<br>They’re NOT interchangeable.</p>
+            </aside>
+          </div>
+
+          <article class="learn-flagship">
+            <div class="learn-flagship-copy">
+              <span class="exhibit-kicker">Exhibit 02</span>
+              <h4 class="capability-title">Reimagining how organizations learn from users.</h4>
+              <p class="project-citation">Design With Us</p>
+              <p>Like many organizations, VMware’s conference research generated participation, but relatively little organizational learning or strategic alignment. Individual studies answered immediate questions, yet rarely created a repeatable way for Product, Design, Engineering, and Research to identify emerging priorities and think ahead together over time.</p>
+              <p>Design With Us redesigned the research ecosystem itself. Participatory design, iterative experimentation, cross-functional collaboration, and rigorous evaluation transformed conference research into a continuously improving learning system that connected user insight to product strategy long after each event ended.</p>
+            </div>
+
+            <div class="video-embed learn-flagship-video">
+              <iframe src="https://www.youtube.com/embed/OUitGg_GM34" title="Design Case Study: Disrupting Research with Design With Us" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <div class="flip-card-grid">
+              <article class="flip-card">
+                <button class="flip-card-button" type="button" aria-pressed="false" aria-label="Turn user engagement into enterprise memory: reveal details">
+                  <span class="flip-card-inner">
+                    <span class="flip-card-face flip-card-front">
+                      <span class="flip-card-type">Memory</span>
+                      <h5 class="flagship-principle-title">Turn user engagement into enterprise memory.</h5>
+                    </span>
+                    <span class="flip-card-face flip-card-back">
+                      <p>Rather than treating each conference as a standalone research effort, evidence, methods, and operational knowledge are accumulated across events, allowing every year to strengthen—not restart—the organization’s understanding of its users. Learning becomes cumulative, preserving context and accelerating future decisions.</p>
+                    </span>
+                  </span>
+                </button>
+              </article>
+
+              <article class="flip-card">
+                <button class="flip-card-button" type="button" aria-pressed="false" aria-label="Implement research as organizational infrastructure: reveal details">
+                  <span class="flip-card-inner">
+                    <span class="flip-card-face flip-card-front">
+                      <span class="flip-card-type">Infrastructure</span>
+                      <h5 class="flagship-principle-title">Implement research as organizational infrastructure.</h5>
+                    </span>
+                    <span class="flip-card-face flip-card-back">
+                      <p>Research is designed as a shared organizational capability rather than a collection of individual studies. Cross-functional partnerships, standardized operating practices, and rigorous evaluation enable teams to continuously generate, integrate, and apply user evidence across products, business units, and time.</p>
+                    </span>
+                  </span>
+                </button>
+              </article>
+
+              <article class="flip-card">
+                <button class="flip-card-button" type="button" aria-pressed="false" aria-label="Position evidence as a strategic capability: reveal details">
+                  <span class="flip-card-inner">
+                    <span class="flip-card-face flip-card-front">
+                      <span class="flip-card-type">Strategy</span>
+                      <h5 class="flagship-principle-title">Position evidence as a strategic capability.</h5>
+                    </span>
+                    <span class="flip-card-face flip-card-back">
+                      <p>Evidence is treated as more than validation for product decisions. User insight, evaluation, and research become strategic inputs that shape priorities, challenge assumptions, and inform conversations traditionally driven by technical or operational perspectives.</p>
+                    </span>
+                  </span>
+                </button>
+              </article>
+            </div>
+          </article>
+
+          <section class="learn-support-grid" aria-label="Additional organizational learning capabilities">
+            <article class="learn-support-card">
+              <div class="learn-support-copy">
+                <h4>Learning before products are finished.</h4>
+                <p class="project-citation">Early Access &amp; Beta</p>
+                <p>Many beta programs generate feedback. Far fewer generate evidence that is structured, synthesized, and delivered early enough to influence product decisions.</p>
+                <p>This mixed-method learning system combined digital feedback, interviews, behavioral signals, and structured evaluation to transform hundreds of user observations into prioritized evidence before general availability.</p>
+                <p class="supporting-metrics">136 users • 547 feedback submissions • 23+ follow-up interviews</p>
+              </div>
+              <figure class="learn-mini-exhibit">
+                <div class="learn-mini-media placeholder">
+                  <div>
+                    <strong>Early Access Summary Deck</strong>
+                    <span>Add a synthesis or prioritization slide at <code>assets/img/early-access-summary.png</code>.</span>
+                  </div>
+                </div>
+                <figcaption>
+                  <span class="exhibit-kicker">Exhibit 03</span>
+                  <h5>From Feedback to Readiness</h5>
+                  <p>A product summary showing how qualitative and quantitative evidence were synthesized into prioritized product improvements before general availability.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="learn-support-card">
+              <div class="learn-support-copy">
+                <h4>Designing continuous organizational learning.</h4>
+                <p class="project-citation">Unified Feedback &amp; Telemetry</p>
+                <p>Organizations rarely lack user feedback. They lack the ability to learn from it consistently.</p>
+                <p>Feedback often exists in disconnected systems, inconsistent formats, and incompatible measures, making it difficult to compare findings or build knowledge over time.</p>
+                <p>Standardized feedback, telemetry, governance, and question design improve evidence quality while making organizational learning continuous rather than episodic.</p>
+              </div>
+              <figure class="learn-mini-exhibit">
+                <div class="learn-mini-media placeholder">
+                  <div>
+                    <strong>Unified Feedback Planning Framework</strong>
+                    <span>Add a blueprint, process map, or planning diagram at <code>assets/img/unified-feedback-framework.png</code>.</span>
+                  </div>
+                </div>
+                <figcaption>
+                  <span class="exhibit-kicker">Exhibit 04</span>
+                  <h5>Designing Continuous Learning</h5>
+                  <p>A planning framework illustrating how standardized feedback systems improve evidence quality, comparability, and organizational learning.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="learn-support-card compact">
+              <div class="learn-support-copy">
+                <h4>Building confidence in evidence.</h4>
+                <p class="project-citation">Building Evidence Literacy</p>
+                <p>Trust begins long before a decision is made.</p>
+                <p>Evidence is useful when people understand where it comes from, what it represents, and where its limitations lie. Making evaluation methods visible helps teams build confidence in the evidence they use and the decisions they make.</p>
+              </div>
+              <figure class="learn-mini-exhibit">
+                <div class="learn-mini-media">
+                  <video controls preload="metadata">
+                    <source src="assets/mp4/ihope.mp4" type="video/mp4">
+                    Your browser does not support embedded video.
+                  </video>
+                </div>
+                <figcaption>
+                  <span class="exhibit-kicker">Exhibit 05</span>
+                  <h5>Trust Begins with Understanding</h5>
+                  <p>VMware RADIO excerpt demonstrating why methodological transparency strengthens confidence in evidence.</p>
+                </figcaption>
+              </figure>
+            </article>
+
+            <article class="learn-support-card compact">
+              <div class="learn-support-copy">
+                <h4>Expanding what organizations are able to notice.</h4>
+                <p class="project-citation">Arts-Based Research</p>
+                <p>Better participation can produce better evidence.</p>
+                <p>Creative elicitation techniques increase participation while strengthening the richness and usefulness of evidence, expanding what organizations are able to notice without sacrificing methodological quality.</p>
+              </div>
+              <figure class="learn-mini-exhibit">
+                <div class="learn-mini-media">
+                  <img src="assets/img/radio-1.png" alt="Bryanne Peterson presenting arts-based research">
+                </div>
+                <figcaption>
+                  <span class="exhibit-kicker">Exhibit 06</span>
+                  <h5>Rigor Through Participation</h5>
+                  <p>Conference presentation demonstrating how arts-based methods improved both participant experience and evidence quality.</p>
+                </figcaption>
+              </figure>
+            </article>
+          </section>
+        </section>
+
+        <section class="system-pillar">
+          <div class="align-heading-row">
+            <div class="pillar-heading">
+              <p class="eyebrow">Align</p>
+              <h3>Create confidence across people, priorities, and products.</h3>
+            </div>
+
+            <aside class="field-note align-field-note" aria-label="Field note">
+              <span class="field-note-clip" aria-hidden="true"></span>
+              <span class="field-note-label">FIELD NOTE 04</span>
+              <p>Alignment is a verb.<br>Not a destination.</p>
+            </aside>
+          </div>
+
+          <div class="align-copy">
+            <p>Alignment isn’t agreement.</p>
+            <p>It’s creating enough confidence in the evidence, reasoning, and tradeoffs for organizations to move forward together.</p>
+            <p>The work is making assumptions visible, interpretations explicit, and decision criteria understandable across disciplines.</p>
+          </div>
+
+
+
+        <figure class="video-field-note align-exhibit">
+          <details>
+            <summary>
+              <span class="field-note-clip" aria-hidden="true"></span>
+              <span class="video-field-note-copy">
+                <span class="field-note-label">EXHIBIT 01</span>
+                <p class="video-note-title">Trust Begins with Understanding</p>
+                <p class="video-note-description">Making specialized work more visible helps teams build confidence in one another’s expertise—and in the decisions they make together.</p>
+              </span>
+              <span class="video-field-note-action" aria-hidden="true">
+                <span class="video-field-note-action-text">Watch exhibit</span>
+              </span>
+            </summary>
+            <div class="video-field-note-media">
+              <video controls preload="metadata">
+                <source src="assets/mp4/ihope.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption>VMware RADIO presentation excerpt</figcaption>
+            </div>
+          </details>
+        </figure>
+
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-tag">Applied decision methodology</div>
+              <h3>Multi-Criteria Decision Analysis</h3>
+              <p>Making research tradeoffs visible, explicit, and defensible across competing organizational priorities.</p>
+              <img src="assets/img/mcda.png" alt="Multi-Criteria Decision Analysis framework poster">
+            </article>
+            <article class="card">
+              <div class="card-tag">Visualization</div>
+              <h3>Dichotomous Slope Graph</h3>
+              <p>Transforming participant-generated experiences into structured evidence capable of informing strategic decisions.</p>
+            </article>
+            <article class="card">
+              <div class="card-tag">Framework</div>
+              <h3>GAME Framework</h3>
+              <p>A model for increasing research impact through engagement, agility, methodological innovation, and enterprise relevance.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="system-pillar">
+          <div class="pillar-heading">
+            <p class="eyebrow">Decide</p>
+            <h3>Improve decision quality under uncertainty.</h3>
+            <p>Better decisions rarely depend on perfect information.</p>
+            <p>They depend on trustworthy evidence, thoughtful judgment, and organizations capable of acting with confidence.</p>
+          </div>
+
+          <div class="card-grid">
+            <article class="card">
+              <div class="card-tag">Operating model</div>
+              <h3>Enterprise Decision Infrastructure</h3>
+              <p>Evidence became a required input to recommendations, roadmaps, portfolio planning, OKRs, and executive decisions—not an optional research deliverable.</p>
+            </article>
+            <article class="card">
+              <div class="card-tag">Decision support</div>
+              <h3>Product &amp; Portfolio Prioritization</h3>
+              <p>Integrating multiple forms of evidence into product investment and portfolio strategy across complex organizations.</p>
+            </article>
+            <article class="card">
+              <div class="card-tag">Evaluation framework</div>
+              <h3>AI Evaluation</h3>
+              <p>Evaluation approaches combining behavioral, operational, and customer evidence to guide model investment, deployment, and continuous improvement.</p>
+            </article>
+          </div>
+
+          <aside class="field-note inline-field-note" aria-label="Field note">
+            <span class="field-note-clip" aria-hidden="true"></span>
+            <span class="field-note-label">FIELD NOTE 05</span>
+            <p>The goal isn’t more evidence.<br>The goal is better decisions.</p>
+          </aside>
+        </section>
+      </div>
+    </section>
+
+    <section id="ideas" class="section">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Ideas</p>
+            <h2>Writing, speaking, and public thinking for organizations navigating complexity.</h2>
+            <p class="section-framing">Ideas become useful when they help people see familiar problems differently.</p>
+            <p class="section-framing">The essays, presentations, and conversations collected here explore evidence, evaluation, organizational capability, and decision quality through the lens of practice.</p>
+          </div>
+          <div class="hero-stat">
+            <strong>11K+</strong>
+            <span>registrants for a featured Maze DiscoConf presentation</span>
+          </div>
+        </div>
+
+        <section class="ideas-group">
+          <div class="section-heading compact">
+            <div><p class="eyebrow">Writing</p><h3>Ideas people can use.</h3></div>
+            <a class="button secondary" href="https://medium.com/@bryanne_peterson" target="_blank" rel="noreferrer">Visit Medium</a>
+          </div>
+          <div class="article-grid">
+            <article class="article-card">
+              <span>Research Practice</span>
+              <h3>Arts-Based Research</h3>
+              <p>How creative methods can increase participation while strengthening the richness and usefulness of evidence.</p>
+              <a href="https://medium.com/vmwaredesign/is-art-the-future-of-ux-research-13fc17d9a08e" target="_blank" rel="noreferrer">Read article →</a>
+            </article>
+            <article class="article-card">
+              <span>Research Practice</span>
+              <h3>Play Your Way to Better Research</h3>
+              <p>How playfulness can improve participation, methodological creativity, and the usefulness of research.</p>
+              <a href="https://medium.com/design-bootcamp/play-your-way-to-better-research-e20ce9bea2c6" target="_blank" rel="noreferrer">Read article →</a>
+            </article>
+            <article class="article-card placeholder">
+              <span>Current Thinking</span>
+              <h3>Research as Organizational Infrastructure</h3>
+              <p>Exploring what changes when research becomes a shared organizational capability rather than a service owned by one function.</p>
+            </article>
+            <article class="article-card placeholder">
+              <span>Current Thinking</span>
+              <h3>Why Evaluation Shapes What Organizations Optimize</h3>
+              <p>How measures, benchmarks, and evaluation choices shape investment, behavior, and long-term product direction.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="ideas-group">
+          <div class="pillar-heading">
+            <p class="eyebrow">Speaking and Media</p>
+            <h3>Translating complex ideas into conversations people can use.</h3>
+            <p>A good presentation doesn’t simply explain an idea. It changes what people are able to discuss together afterward.</p>
+          </div>
+          <div class="media-grid">
+            <article class="media-card">
+              <img src="assets/img/radio-1.png" alt="Bryanne Peterson presenting at VMware RADIO">
+              <span>VMware RADIO · People’s Choice Award</span>
+              <h3>Arts-Based Research and Trustworthy Evidence</h3>
+              <p>Won the People’s Choice Award while presenting how methodological innovation, triangulation, and rigorous evaluation can strengthen decision confidence. Selected excerpts appear as Field Notes throughout the site.</p>
+            </article>
+            <article class="media-card">
+              <img src="assets/img/radio-2.png" alt="Presentation audience view at VMware RADIO">
+              <span>Maze DiscoConf 2024</span>
+              <h3>The GAME Framework</h3>
+              <p>Presented to 11,000+ registrants on engagement, agility, and innovation in research practice.</p>
+            </article>
+            <article class="media-card">
+              <div class="media-placeholder">Podcast</div>
+              <span>Enterprise Design Podcast</span>
+              <h3>UX Research at Enterprise Organizations</h3>
+              <p>A conversation about aligning research with business strategy in complex enterprise environments.</p>
+            </article>
+            <article class="media-card">
+              <div class="media-placeholder">SME</div>
+              <span>Maze State of UX Research 2025</span>
+              <h3>Future trends in product decision-making</h3>
+              <p>Contributed subject matter expertise on the changing role of research and evidence.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="research" class="section soft with-field-note">
+      
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Research</p>
+            <h2>A scholar-practitioner record across evaluation, technology, organizational learning, and enterprise research.</h2>
+            <p class="section-framing">The discipline remained remarkably consistent even as the contexts changed.</p>
+            <p class="section-framing">Every project explored the same underlying challenge:</p>
+            <p class="section-framing research-question">How do organizations generate trustworthy evidence capable of improving consequential decisions?</p>
+          </div>
+          <div class="hero-stat">
+            <strong>30+</strong>
+            <span>peer-reviewed, invited, technical, and public-facing publications</span>
+          </div>
+        </div>
+
+        <div class="research-layout">
+          <div class="research-list">
+            <article>
+              <span>2024 · Journal article</span>
+              <h3>How the introduction of content relates to performance in a middle school modeling and simulation environment</h3>
+              <p>Bowen, B. & Peterson, B.</p>
+            </article>
+            <article>
+              <span>2023 · Refereed conference paper</span>
+              <h3>Coloring Outside the Lines: Exploring the Potential for Integrating Creative Evaluation in Engineering Education</h3>
+              <p>Edwards, C. D., Peterson, B., Bhaduri, S., McCall, C. J., & Özkan, D. S.</p>
+            </article>
+            <article>
+              <span>2020 · Journal article</span>
+              <h3>Evaluating a Large-Scale Multi-Institution Project: Challenges Faced and Lessons Learned</h3>
+              <p>Slate Young, E., Peterson, B., Schott, S., & Bookman, J.</p>
+            </article>
+            <article>
+              <span>2020 · Journal article</span>
+              <h3>Building STEM career interest through career-connected curriculum treatments</h3>
+              <p>Peterson, B.</p>
+            </article>
+          </div>
+
+          <aside class="research-links">
+            <a class="resource-card" href="https://scholar.google.com/scholar?q=bryanne+peterson&hl=en&as_sdt=0,47" target="_blank" rel="noreferrer">
+              <strong>Google Scholar</strong>
+              <span>View indexed publications and citations →</span>
+            </a>
+            <a class="resource-card" href="assets/pdf/bryanne-peterson-cv-2026.pdf">
+              <strong>Curriculum Vitae</strong>
+              <span>Open the full academic CV →</span>
+            </a>
+            <div class="resource-card">
+              <strong>Internal research</strong>
+              <span>Selected titles and summaries will appear here without exposing confidential content.</span>
+            </div>
+          </aside>
+        </div>
+      <aside class="field-note inline-field-note" aria-label="Field note">
+          <span class="field-note-clip" aria-hidden="true"></span>
+          <span class="field-note-label">FIELD NOTE 07</span>
+          <p>Methods matter.<br>Only because decisions matter.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section dark with-field-note">
+      <aside class="field-note field-note-dark" aria-label="Field note">
+        <span class="field-note-clip" aria-hidden="true"></span>
+        <span class="field-note-label">FIELD NOTE 06</span>
+        <p>The domains changed. The underlying challenge did not.</p>
+      </aside>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>Different domains. One recurring challenge.</h2>
+            <p class="section-framing inverse-framing">Every chapter added a different capability. Together, they changed how I approach complex decisions.</p>
+          </div>
+          <div class="hero-stat inverse">
+            <strong>6</strong>
+            <span>major domains shaped by the same focus on decision quality</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <article><span>Military</span><h3>Leadership under pressure</h3><p>Execution, communication, and decision-making in high-stakes, multinational environments.</p></article>
+          <article><span>Virginia Tech</span><h3>Evaluation science</h3><p>Longitudinal measurement, multi-site evaluation, capability development, and methodological rigor.</p></article>
+          <article><span>YNOTI</span><h3>Research strategy</h3><p>Grant evaluation, workforce development, and organizational transformation.</p></article>
+          <article><span>Ads4Earth</span><h3>Machine learning evaluation</h3><p>Evaluation frameworks integrating behavioral, operational, and customer evidence.</p></article>
+          <article><span>VMware</span><h3>Enterprise transformation</h3><p>Research became strategic infrastructure for product, portfolio, and executive decision-making.</p></article>
+          <article><span>Current</span><h3>AI, evaluation, and organizational learning</h3><p>Exploring how organizations define quality, evaluate emerging capability, and build trust in complex systems.</p></article>
+        </div>
+        <div class="about-copy">
+        <div>
+          <p class="lead">My path has taken me through military leadership, academic research, consulting, startups, and enterprise technology. Each chapter added a different capability: execution, rigor, adaptation, scale, and organizational influence.</p>
+          <p>I’m most energized by opportunities to strengthen leadership, mentor teams, shape organizational strategy, and improve how evidence informs consequential product and business decisions.</p>
+          <div class="button-row">
+            <a class="button light" href="assets/pdf/bryanne-peterson-cv-2026.pdf">View CV</a>
+            <a class="button ghost" href="mailto:bryannepeterson@me.com">Contact me</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="shell footer-clean">
+      <div class="footer-clean-copy">
+        <p class="eyebrow">One persistent question</p>
+        <p class="footer-clean-question">How can organizations make better decisions?</p>
+        <p class="footer-clean-context">My career has taken me through military leadership, academia, consulting, startups, and enterprise technology. Different industries and challenges, connected by the same focus on decision quality.</p>
+      </div>
+
+      <nav class="footer-clean-links" aria-label="Footer">
+        <a href="#systems">Systems</a>
+        <a href="#ideas">Ideas</a>
+        <a href="#research">Research</a>
+        <a href="https://scholar.google.com/scholar?q=bryanne+peterson&hl=en&as_sdt=0,47" target="_blank" rel="noreferrer">Google Scholar</a>
+        <a href="mailto:bryannepeterson@me.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+  <script>
+    document.querySelectorAll('.video-field-note details').forEach((note) => {
+      note.addEventListener('toggle', () => {
+        if (!note.open) {
+          const video = note.querySelector('video');
+          if (video && !video.paused) video.pause();
+        }
+      });
+    });
+  </script>
+
+
+  <script>
+    document.querySelectorAll('.flip-card-button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.flip-card');
+        const flipped = card.classList.toggle('is-flipped');
+        button.setAttribute('aria-pressed', String(flipped));
+      });
+    });
+  </script>
+
+
+
+
+  <script>
+    (() => {
+      const nav = document.querySelector('.site-nav');
+      const clip = nav?.querySelector('.nav-clip');
+      const links = [...(nav?.querySelectorAll('a[href^="#"]') || [])];
+      if (!nav || !clip || !links.length) return;
+
+      const sections = links
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      const moveClip = (link, animate = true) => {
+        const navRect = nav.getBoundingClientRect();
+        const linkRect = link.getBoundingClientRect();
+        clip.style.left = `${linkRect.left - navRect.left + linkRect.width / 2}px`;
+
+        links.forEach(item => item.classList.toggle('active', item === link));
+
+        if (animate) {
+          nav.classList.add('is-moving');
+          clearTimeout(nav._clipTimer);
+          nav._clipTimer = setTimeout(() => nav.classList.remove('is-moving'), 240);
+        }
+      };
+
+      const updateFromScroll = () => {
+        const marker = window.innerHeight * .34;
+        let current = sections[0];
+
+        sections.forEach(section => {
+          if (section.getBoundingClientRect().top <= marker) current = section;
+        });
+
+        const link = links.find(item => item.getAttribute('href') === `#${current.id}`) || links[0];
+        moveClip(link);
+      };
+
+      links.forEach(link => {
+        link.addEventListener('mouseenter', () => moveClip(link));
+        link.addEventListener('focus', () => moveClip(link));
+      });
+
+      nav.addEventListener('mouseleave', updateFromScroll);
+      window.addEventListener('scroll', updateFromScroll, { passive: true });
+      window.addEventListener('resize', updateFromScroll);
+      window.addEventListener('load', () => {
+        moveClip(links[0], false);
+        updateFromScroll();
+      });
+    })();
+  </script>
+
+</body>
+</html>
